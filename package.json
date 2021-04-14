@@ -1,0 +1,89 @@
+{
+  "name": "@mono/example",
+  "version": "1.0.0",
+  "description": "a guide to setup a monorepository",
+  "author": "Alexander Kämmerer <atothek1@gmail.com>",
+  "homepage": "https://github.com/atothek1/monorepo-setup#readme",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atothek1/monorepo-setup.git"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "clean-install": "lerna clean && lerna bootstrap",
+    "build": "lerna run build --stream",
+    "type": "lerna run type --stream",
+    "lint": "lerna run lint --stream",
+    "test": "lerna run test --stream",
+    "quality": "npm run type && npm run lint && npm run test",
+    "build:example-app": "lerna run build --scope @mono/example-app --stream",
+    "start:example-app": "lerna run start --scope @mono/example-app --stream"
+  },
+  "lint-staged": {
+    "packages/**/*.{js,ts,tsx}": [
+      "lint",
+      "type"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run test",
+      "commit-msg": "commitlint --config ./config/commitlint.config.js --env HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/plugin-transform-react-jsx": "^7.13.12",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@commitlint/config-lerna-scopes": "^12.1.1",
+    "@statoscope/ui-webpack": "^4.0.0",
+    "@types/node": "^14.14.37",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "babel-loader": "^8.2.2",
+    "case-sensitive-paths-webpack-plugin": "^2.4.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^8.1.1",
+    "core-js": "^3.10.1",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.0",
+    "css-minimizer-webpack-plugin": "^1.3.0",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "husky": "^6.0.0",
+    "lerna": "^4.0.0",
+    "lint-staged": "^10.5.4",
+    "mini-css-extract-plugin": "^1.4.0",
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2",
+    "sass-loader": "^11.0.1",
+    "standard-version": "^9.1.1",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.1.1",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.3",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.30.0",
+    "webpack-bundle-analyzer": "^4.4.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
+  }
+}
