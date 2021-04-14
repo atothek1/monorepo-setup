@@ -1,0 +1,47 @@
+{
+  "name": "@mono/example-lib",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Alexander Kämmerer <atothek1@gmail.com>",
+  "homepage": "https://github.com/atothek1/monorepo-setup#readme",
+  "license": "MIT",
+  "main": "src/index.tsx",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atothek1/monorepo-setup.git"
+  },
+  "scripts": {
+    "type": "tsc --noEmit",
+    "lint": "echo \"TODO: impl eslint\" && exit 0",
+    "test": "echo \"TODO: impl jest\" && exit 0"
+  },
+  "peerDependencies": {
+    "core-js": "^3.10.1",
+    "formik": "^2.2.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@types/react-router": "^5.1.13",
+    "@types/react-router-dom": "^5.1.7",
+    "classnames": "^2.3.1",
+    "core-js": "^3.10.1",
+    "formik": "^2.2.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "yup": "^0.32.9"
+  },
+  "bugs": {
+    "url": "https://github.com/atothek1/monorepo-setup/issues"
+  }
+}

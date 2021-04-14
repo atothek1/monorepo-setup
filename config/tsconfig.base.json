@@ -1,0 +1,53 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "jsx": "preserve",
+
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+
+    "strict": true,
+    "noImplicitAny": true,                 /* Raise error on expressions and declarations with an implied 'any' type. */
+    "strictNullChecks": true,              /* Enable strict null checks. */
+    "strictFunctionTypes": true,           /* Enable strict checking of function types. */
+    "strictBindCallApply": true,           /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
+    "strictPropertyInitialization": true,  /* Enable strict checking of property initialization in classes. */
+    "noImplicitThis": true,                /* Raise error on 'this' expressions with an implied 'any' type. */
+    "alwaysStrict": true,                  /* Parse in strict mode and emit "use strict" for each source file. */
+    "noUnusedLocals": true,                /* Report errors on unused locals. */
+    "noUnusedParameters": true,            /* Report errors on unused parameters. */
+    "noImplicitReturns": true,             /* Report error when not all code paths in function return a value. */
+    "noFallthroughCasesInSwitch": true,    /* Report errors for fallthrough cases in switch statement. */
+    "noUncheckedIndexedAccess": true,      /* Include 'undefined' in index signature results */
+
+    "importHelpers": true,
+    "skipLibCheck": false,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "DOM",
+      "ES5",
+      "ES6",
+      "ES7"
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "**/dist/*",
+    "**/coverage/*",
+    "**/cypress/*",
+    "**/node_modules/*",
+    "**/scripts/*"
+  ]
+}

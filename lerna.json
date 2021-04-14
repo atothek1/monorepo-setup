@@ -1,0 +1,14 @@
+{
+  "command": {
+    "bootstrap": {
+      "hoist": "**"
+    },
+    "clean": {
+      "yes": true
+    }
+  },
+  "packages": [
+    "packages/*"
+  ],
+  "version": "1.0.0"
+}
