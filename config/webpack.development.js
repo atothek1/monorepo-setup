@@ -1,7 +1,6 @@
 const { merge } = require( "webpack-merge" );
 const { join, resolve } = require("path");
-const { DefinePlugin, HotModuleReplacementPlugin } = require( "webpack" );
-const { isDevelopmentBuild, isProductionBuild, DEVELOPMENT_ENV } = require( "../build/webpack.utils" );
+const { HotModuleReplacementPlugin } = require( "webpack" );
 
 module.exports = ( rootPath, packagePath ) => {
     const baseConfig = require( resolve( rootPath, "config", "./webpack.base.js" ) );
@@ -17,13 +16,6 @@ module.exports = ( rootPath, packagePath ) => {
         },
         plugins: [
             new HotModuleReplacementPlugin(),
-            new DefinePlugin( {
-                __IS_PRODUCTION__: JSON.stringify( isProductionBuild() ),
-                __IS_DEVELOPMENT__: JSON.stringify( isDevelopmentBuild() ),
-                "process.env": {
-                    NODE_ENV: JSON.stringify( DEVELOPMENT_ENV ),
-                },
-            } )
         ],
     } );
 };
