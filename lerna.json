@@ -5,10 +5,14 @@
     },
     "clean": {
       "yes": true
+    },
+    "publish": {
+      "conventionalCommits": true,
+      "registry": "http://localhost:4873"
     }
   },
   "packages": [
     "packages/*"
   ],
-  "version": "1.0.0"
+  "version": "independent"
 }
