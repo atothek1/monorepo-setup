@@ -3,10 +3,8 @@ const webpack = require("webpack");
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const HtmlPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const StatoscopePlugin = require("@statoscope/ui-webpack");
 const TerserPlugin = require("terser-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
-const {BundleAnalyzerPlugin} = require("webpack-bundle-analyzer");
 const {getEnvironment, isDevelopmentBuild, isProductionBuild} = require("../build/webpack.utils");
 
 module.exports = (rootPath, packagePath) => {
@@ -153,6 +151,8 @@ module.exports = (rootPath, packagePath) => {
                 chunksSortMode: "auto",
             }),
             new webpack.DefinePlugin({
+                __IS_PRODUCTION__: JSON.stringify( isProductionBuild() ),
+                __IS_DEVELOPMENT__: JSON.stringify( isDevelopmentBuild() ),
                 __APP_NAME__: JSON.stringify(appConfig.name),
                 __VERSION__: JSON.stringify(packageInfo.version),
                 __ENVIRONMENT__: JSON.stringify(getEnvironment()),
@@ -163,19 +163,6 @@ module.exports = (rootPath, packagePath) => {
                 filename: isDevelopmentBuild() ? "[name].css" : "[name].[contenthash].css",
                 chunkFilename: isDevelopmentBuild() ? "[id].css" : "[id].[contenthash].css",
             }),
-            isProductionBuild() && new BundleAnalyzerPlugin({
-                analyzerMode: "static",
-                generateStatsFile: true,
-                openAnalyzer: true,
-                logLevel: "error",
-            }),
-            isProductionBuild() && new StatoscopePlugin({
-                saveTo: './temp/report-[name]-[hash].html',
-                saveStatsTo: './temp/stats-[name]-[hash].json',
-                watchMode: false,
-                name: 'example-app',
-                open: 'file'
-            })
-        ].filter(Boolean),
+        ],
     };
 }

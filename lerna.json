@@ -12,7 +12,9 @@
     }
   },
   "packages": [
-    "packages/*"
+    "packages/apps/*",
+    "packages/libs/*",
+    "packages/mods/*"
   ],
   "version": "independent"
 }
