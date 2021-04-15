@@ -22,8 +22,8 @@
     "lint": "lerna run lint --concurrency 1 --stream --since HEAD --exclude-dependents",
     "test": "lerna run test --concurrency 1 --stream --since HEAD --exclude-dependents",
     "quality": "npm run type && npm run lint && npm run test",
-    "build:example-app": "lerna run build --scope @mono/example-app --stream",
-    "start:example-app": "lerna run start --scope @mono/example-app --stream"
+    "build:example-app": "lerna run build --scope @mono/example --stream",
+    "start:example-app": "lerna run start --scope @mono/example --stream"
   },
   "husky": {
     "hooks": {

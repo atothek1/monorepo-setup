@@ -1,5 +1,5 @@
 import React from "react";
-import {Module as AuthModule} from "@mono/example-mod";
+import {Module as LoginModule} from "@mono/login";
 
 // exception from named exports
 // as this is a lazy loaded/imported component
@@ -7,7 +7,7 @@ import {Module as AuthModule} from "@mono/example-mod";
 // with React.lazy(...)
 export default function Auth() {
     const api = {
-        basePath: "/auth"
+        basePath: "/login"
     };
-    return (<AuthModule api={api}/>);
+    return (<LoginModule api={api}/>);
 }

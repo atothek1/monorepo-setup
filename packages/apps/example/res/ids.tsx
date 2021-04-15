@@ -1,6 +1,6 @@
 export enum RouteIds {
     HOME = "routes:app:home",
-    AUTH = "routes:app:auth",
+    LOGIN = "routes:app:login",
     DASHBOARD = "routes:app:dashboard"
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import {Box} from "@mono/example-lib";
+import {Box} from "@mono/components";
 
 export function Home() {
     return (

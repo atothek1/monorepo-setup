@@ -1,5 +1,5 @@
 {
-  "name": "@mono/example-app",
+  "name": "@mono/example",
   "version": "1.0.0",
   "description": "An example application",
   "author": "Alexander Kämmerer <atothek1@gmail.com>",
@@ -32,8 +32,8 @@
     "test": "echo \"TODO: impl jest\" && exit 0"
   },
   "dependencies": {
-    "@mono/example-lib": "^1.0.0",
-    "@mono/example-mod": "^1.0.0",
+    "@mono/components": "^1.0.0",
+    "@mono/login": "^1.0.0",
     "@mono/navigation": "^1.0.0",
     "classnames": "^2.3.1",
     "core-js": "^3.10.1",

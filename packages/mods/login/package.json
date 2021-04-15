@@ -1,5 +1,5 @@
 {
-  "name": "@mono/example-mod",
+  "name": "@mono/login",
   "version": "1.0.0",
   "description": "> TODO: description",
   "author": "Alexander Kämmerer <atothek1@gmail.com>",
@@ -21,7 +21,7 @@
     "test": "echo \"TODO: impl jest\" && exit 0"
   },
   "peerDependencies": {
-    "@mono/example-lib": "^1.0.0",
+    "@mono/components": "^1.0.0",
     "@mono/navigation": "^1.0.0",
     "core-js": "^3.10.1",
     "formik": "^2.2.6",
@@ -32,7 +32,7 @@
     "yup": "^0.32.9"
   },
   "devDependencies": {
-    "@mono/example-lib": "^1.0.0",
+    "@mono/components": "^1.0.0",
     "@mono/navigation": "^1.0.0",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",

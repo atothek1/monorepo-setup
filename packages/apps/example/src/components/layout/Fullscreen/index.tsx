@@ -1,6 +1,6 @@
 import cn from "classnames";
 import React from "react";
-import {Box} from "@mono/example-lib";
+import {Box} from "@mono/components";
 import { Link } from "react-router-dom";
 import styles from "./styles.scss";
 
@@ -18,7 +18,7 @@ export function Fullscreen(props:FullscreenProps) {
                 <Box as="nav" className={styles.nav}>
                     <ul>
                         <li><Link to={"/"}>Home</Link></li>
-                        <li><Link to={"/auth/login"}>Login</Link></li>
+                        <li><Link to={"/login"}>Login</Link></li>
                     </ul>
                 </Box>
             </Box>
