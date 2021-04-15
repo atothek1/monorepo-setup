@@ -1,6 +1,6 @@
 const { resolve } = require( "path" );
 
-const rootPath = resolve( __dirname, "..", "..", ".." );
+const rootPath = resolve( __dirname, "..", "..", "..", ".." );
 const packagePath = resolve( __dirname, ".." );
 const {
     getEnvironment,

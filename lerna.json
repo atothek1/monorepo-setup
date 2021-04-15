@@ -12,7 +12,8 @@
     }
   },
   "packages": [
-    "packages/*"
+    "packages/*",
+    "packages/apps/*"
   ],
   "version": "independent"
 }

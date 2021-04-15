@@ -11,7 +11,8 @@
     "url": "https://github.com/atothek1/monorepo-setup.git"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "packages/apps/*"
   ],
   "scripts": {
     "clean-install": "lerna clean && lerna bootstrap",
