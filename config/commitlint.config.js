@@ -20,10 +20,27 @@ function validateContainsJiraId( message ) {
 
 // get lerna package scopes that are used as allowed scopes in conventional commit messages.
 function getScopes( initialEnum = [] ) {
-    return () => lernaScopesConfig.utils
+    return (ctx) => lernaScopesConfig.utils
         .getPackages()
         .then( packageList => initialEnum.concat( packageList ) )
         .then( scopeList => [ 2, "always", scopeList ] );
+}
+
+function jiraIdFooterRulePlugin( parsed = undefined ) {
+    // there was no footer part detected in the commit message
+    if ( parsed === undefined || ( parsed && parsed.footer === null ) ) {
+        return [ false, missingFooterMessage ];
+    }
+    // check for prefix of the footer
+    if ( !validateFooterPrefix( parsed.footer ) ) {
+        return [ false, invalidFooterPrefixMessage ];
+    }
+    // check for jira id
+    if ( validateContainsJiraId( parsed.footer ) ) {
+        return [ true ];
+    }
+    //
+    return [ false, missingJiraIdMessage ];
 }
 
 // setup config
@@ -32,28 +49,13 @@ module.exports = {
     plugins: [ {
         rules: {
             // custom rule to find JIRA Issue ID in the footer
-            "jira-id-footer": ( parsed = undefined ) => {
-                // there was no footer part detected in the commit message
-                if ( parsed === undefined || ( parsed && parsed.footer === null ) ) {
-                    return [ false, missingFooterMessage ];
-                }
-                // check for prefix of the footer
-                if ( !validateFooterPrefix( parsed.footer ) ) {
-                    return [ false, invalidFooterPrefixMessage ];
-                }
-                // check for jira id
-                if ( validateContainsJiraId( parsed.footer ) ) {
-                    return [ true ];
-                }
-                //
-                return [ false, missingJiraIdMessage ];
-            },
+            // "jira-id-footer": jiraIdFooterRulePlugin,
         },
     },
     ],
     rules: {
         "footer-leading-blank": [ 2, "always" ],
         "scope-enum": ctx => getScopes( scopes )( ctx ),
-        "jira-id-footer": [ 2, "always" ],
+        // "jira-id-footer": [ 2, "always" ],
     },
 };
