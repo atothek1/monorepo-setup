@@ -13,7 +13,8 @@
   },
   "packages": [
     "packages/*",
-    "packages/apps/*"
+    "packages/apps/*",
+    "packages/libs/*"
   ],
   "version": "independent"
 }
