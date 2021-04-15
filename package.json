@@ -13,7 +13,8 @@
   "workspaces": [
     "packages/*",
     "packages/apps/*",
-    "packages/libs/*"
+    "packages/libs/*",
+    "packages/mods/*"
   ],
   "scripts": {
     "clean-install": "lerna clean && lerna bootstrap",
