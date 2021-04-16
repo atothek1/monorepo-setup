@@ -42,7 +42,7 @@ lerna init
 
 ### installing some misc packages
 ```shell script
-npm i -D core-js cross-env husky lint-staged nodemon rimraf
+npm i -D core-js cross-env husky@4 nodemon rimraf
 ```
 
 ### installing commitlint packages
@@ -50,7 +50,7 @@ npm i -D core-js cross-env husky lint-staged nodemon rimraf
 npm i -D @commitlint/{config-conventional,config-lerna-scopes,cli} standard-version
 ```
 
-#### setup husky for integration of lint-staged and commitlint
+#### setup husky for integration of commitlint
 
 create [config/commitlint.config.js](../config/commitlint.config.js) file.
 adding husky for running commitlint and eslint as pre-commit and commit-msg to [package.json](../package.json) 
@@ -58,15 +58,9 @@ adding husky for running commitlint and eslint as pre-commit and commit-msg to [
 The commitlint config is extended to support some special requirements to the project.
 ```json
 {
-  "lint-staged": {
-    "packages/**/*.{js,ts,tsx}": [
-      "lint",
-      "type-check"
-    ]
-  },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "npm run quality",
       "commit-msg": "commitlint --config ./config/commitlint.config.js --env HUSKY_GIT_PARAMS"
     }
   }
