@@ -1,0 +1,119 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "tsconfigRootDir": ".",
+    "project": "tsconfig.json",
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint/eslint-plugin"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "__APP_NAME__": "readonly",
+    "__VERSION__": "readonly",
+    "__CONFIG__": "readonly",
+    "__ENVIRONMENT__": "readonly",
+    "__IS_DEVELOPMENT__": "readonly",
+    "__IS_PRODUCTION__": "readonly"
+  },
+  "rules": {
+    // general code style settings
+    "indent": [ "error", 4, { "SwitchCase": 1 } ],
+    "quotes": [ "error", "double" ],
+    "max-len": [ "error", 300 ],
+    "padded-blocks": "off",
+
+    // space settings
+    "space-in-parens": [ "error", "always" ],
+    "array-bracket-spacing": [ "error", "always" ],
+    "computed-property-spacing": [ "error", "always" ],
+    "object-curly-spacing": [ "error", "always", { "arraysInObjects": true, "objectsInObjects": true } ],
+    "object-property-newline": "error",
+    "template-curly-spacing": [ "error", "always" ],
+
+    // project convient settings
+    "no-underscore-dangle": "off",
+    "no-plusplus": "off",
+    "no-bitwise": "off",
+    "no-console": "off",
+
+    // best practices
+    "arrow-parens": [ "error", "as-needed", { "requireForBlockBody": true } ],
+
+    // react plugin
+    "react/prop-types": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-indent": [ "error", 4 ],
+    "react/jsx-indent-props": [ "error", 4 ],
+    "react/jsx-curly-spacing": [ "error", "always" ],
+    "react-hooks/exhaustive-deps": "error",
+
+    // imports plugin
+    // "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "import/no-cycle": [ "error", { "maxDepth": 1 } ],
+
+    // typescript plugin
+    // "@typescript-eslint/no-unsafe-assignment": "off",
+    // "@typescript-eslint/no-unsafe-call": "off",
+    // "@typescript-eslint/no-empty-interface": "off",
+    // "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/indent": [ "error", 4 ],
+    "@typescript-eslint/quotes": [ "error", "double" ],
+    "@typescript-eslint/restrict-template-expressions": [ "error", { "allowNullish": true, "allowAny": true } ],
+    "@typescript-eslint/explicit-function-return-type": [ "error", {
+      "allowExpressions": true,
+      "allowTypedFunctionExpressions": true,
+      "allowHigherOrderFunctions": true
+    } ]
+  },
+  "overrides": [
+    {
+      "files": [ "*.js" ],
+      "rules": {
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/extensions": [
+      ".js",
+      ".jsx",
+      ".ts",
+      ".tsx"
+    ]
+  }
+}
