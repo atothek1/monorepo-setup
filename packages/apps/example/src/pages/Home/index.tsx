@@ -1,7 +1,7 @@
 import React from "react";
-import {Box} from "@mono/components";
+import { Box } from "@mono/components";
 
-export function Home() {
+export function Home(): JSX.Element {
     return (
         <Box as="section">
             Hello World. Test
