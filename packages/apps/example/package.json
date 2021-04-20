@@ -28,7 +28,8 @@
     "clean": "rimraf ./coverage ./dist",
     "start": "cross-env NODE_ENV=development webpack serve --config ./config/webpack.js",
     "type": "tsc --noEmit",
-    "lint": "echo \"TODO: impl eslint\" && exit 0",
+    "lint": "eslint src --ext .ts,.tsx --config ../../../.eslintrc",
+    "lint:fix": "eslint src --ext .ts,.tsx --config ../../../.eslintrc --fix",
     "test": "echo \"TODO: impl jest\" && exit 0"
   },
   "dependencies": {
