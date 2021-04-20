@@ -4,10 +4,10 @@ import { getRootElement } from "@utils/dom";
 import { App } from "./app";
 
 render(
-    <App
-        name={ __APP_NAME__ }
-        version={ __VERSION__ }
-        environment={ __ENVIRONMENT__ }
-    />,
-    getRootElement(),
+  <App
+    name={ __APP_NAME__ }
+    version={ __VERSION__ }
+    environment={ __ENVIRONMENT__ }
+  />,
+  getRootElement(),
 );

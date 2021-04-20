@@ -43,7 +43,7 @@
   },
   "rules": {
     // general code style settings
-    "indent": [ "error", 4, { "SwitchCase": 1 } ],
+    "indent": [ "error", 2, { "SwitchCase": 1 } ],
     "quotes": [ "error", "double" ],
     "max-len": [ "error", 300 ],
     "padded-blocks": "off",
@@ -59,7 +59,6 @@
     // project convient settings
     "no-underscore-dangle": "off",
     "no-plusplus": "off",
-    "no-bitwise": "off",
     "no-console": "off",
 
     // best practices
@@ -67,9 +66,9 @@
 
     // react plugin
     "react/prop-types": "off",
-    "react/jsx-one-expression-per-line": "off",
-    "react/jsx-indent": [ "error", 4 ],
-    "react/jsx-indent-props": [ "error", 4 ],
+    "react/jsx-one-expression-per-line": ["error", { "allow": "single-child" }],
+    "react/jsx-indent": [ "error", 2 ],
+    "react/jsx-indent-props": [ "error", 2 ],
     "react/jsx-curly-spacing": [ "error", "always" ],
     "react-hooks/exhaustive-deps": "error",
     "react/require-default-props": [ "error", {
@@ -86,7 +85,7 @@
     // "@typescript-eslint/no-unsafe-call": "off",
     // "@typescript-eslint/no-empty-interface": "off",
     // "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/indent": [ "error", 4 ],
+    "@typescript-eslint/indent": [ "error", 2 ],
     "@typescript-eslint/quotes": [ "error", "double" ],
     "@typescript-eslint/restrict-template-expressions": [ "error", { "allowNullish": true, "allowAny": true } ],
     "@typescript-eslint/explicit-function-return-type": [ "error", {

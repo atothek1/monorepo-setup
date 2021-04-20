@@ -5,23 +5,23 @@ import { Link } from "react-router-dom";
 import styles from "./styles.scss";
 
 interface FullscreenProps {
-    readonly children: React.ReactNode;
+  readonly children: React.ReactNode;
 }
 
 export function Fullscreen( props:FullscreenProps ): JSX.Element {
-    const { children } = props;
-    return (
-        <Box className={ cn( styles.root ) } column>
-            <Box as="header" className={ cn( styles.header ) }>Header</Box>
-            <Box className={ styles.content }>
-                <Box as="main" className={ styles.main }>{children}</Box>
-                <Box as="nav" className={ styles.nav }>
-                    <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/login">Login</Link></li>
-                    </ul>
-                </Box>
-            </Box>
+  const { children } = props;
+  return (
+    <Box className={ cn( styles.root ) } column>
+      <Box as="header" className={ cn( styles.header ) }>Header</Box>
+      <Box className={ styles.content }>
+        <Box as="main" className={ styles.main }>{children}</Box>
+        <Box as="nav" className={ styles.nav }>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/login">Login</Link></li>
+          </ul>
         </Box>
-    );
+      </Box>
+    </Box>
+  );
 }
