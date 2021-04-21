@@ -3,7 +3,7 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "tsconfigRootDir": ".",
-    "project": "tsconfig.json",
+    "project": "tsconfig.eslint.json",
     "ecmaVersion": 2020,
     "sourceType": "module",
     "ecmaFeatures": {
@@ -96,11 +96,20 @@
   },
   "overrides": [
     {
-      "files": [ "*.js" ],
+      "files": [ "webpack.js", "webpack.*.js", "babel.*.js" ],
+      "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "import/no-dynamic-require": "off",
+        "global-require": "off"
+      }
+    },
+    {
+      "files": [ "*.js", "*.jsx" ],
       "rules": {
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-unsafe-member-access": "off",
         "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-var-requires": "off"
