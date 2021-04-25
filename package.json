@@ -16,7 +16,9 @@
     "packages/mods/*"
   ],
   "scripts": {
-    "clean-install": "lerna clean && lerna bootstrap",
+    "clean": "rimraf ./node_modules && lerna clean",
+    "prebootstrap": "npm run clean",
+    "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream",
     "type": "lerna run type --concurrency 1 --stream --since HEAD --exclude-dependents",
     "lint": "eslint ./ --ignore-pattern '/packages/*' --config .eslintrc && npm run lint:pkgs",
