@@ -1,0 +1,4 @@
+coverage/**/.js
+dist/**/.js
+node_modules/**/.js
+temp/**/.js

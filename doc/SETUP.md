@@ -98,7 +98,7 @@ npm i -D webpack webpack-cli webpack-dev-server webpack-merge babel-loader clean
 
 ### installing eslint packages
 ```shell script
-npm i -D eslint eslint-config-airbnb-typescript eslint-plugin-import eslint-plugin-jest eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-jsx-a11y
+npm i -D eslint eslint-config-airbnb-typescript eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-jsx-a11y
 ```
 
 #### setup eslint configs

@@ -12,23 +12,23 @@ declare const __IS_PRODUCTION__: boolean;
 declare const __CONFIG__: Config;
 
 declare interface Config {
-    readonly title: string;
+  readonly title: string;
 }
 
 declare interface KeyValuePair<T = unknown> {
-    readonly key: string;
-    readonly value: T;
+  readonly key: string;
+  readonly value: T;
 }
 
 declare interface Dictionary<T = unknown> {
-    [ key: string ]: T;
+  [ key: string ]: T;
 }
 
 declare interface ReadonlyDictionary<T = unknown> {
-    readonly [ key: string ]: Readonly<T>;
+  readonly [ key: string ]: Readonly<T>;
 }
 
 declare module "*.scss" {
-    const content: Record<string, string>;
-    export default content;
+  const content: Record<string, string>;
+  export default content;
 }
