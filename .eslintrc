@@ -8,11 +8,13 @@
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    }
+    },
+    "extraFileExtensions":[ ".spec.ts", ".spec.tsx"]
   },
   "extends": [
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:jest/recommended",
     "plugin:import/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
@@ -26,6 +28,7 @@
   "plugins": [
     "react",
     "react-hooks",
+    "jest",
     "@typescript-eslint/eslint-plugin"
   ],
   "env": {
@@ -35,6 +38,8 @@
   },
   "globals": {
     "__APP_NAME__": "readonly",
+    "__LIB_NAME__": "readonly",
+    "__MOD_NAME__": "readonly",
     "__VERSION__": "readonly",
     "__CONFIG__": "readonly",
     "__ENVIRONMENT__": "readonly",
@@ -96,7 +101,7 @@
   },
   "overrides": [
     {
-      "files": [ "webpack.js", "webpack.*.js", "babel.*.js", "commitlint.*.js" ],
+      "files": [ "webpack.js", "webpack.*.js", "babel.*.js", "commitlint.*.js", "jest.*.js" ],
       "rules": {
         "import/no-extraneous-dependencies": "off",
         "import/no-dynamic-require": "off",
@@ -113,7 +118,8 @@
         "@typescript-eslint/no-unsafe-return": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/no-var-requires": "off"
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/unbound-method": "off"
       }
     }
   ],
@@ -121,11 +127,14 @@
     "react": {
       "version": "detect"
     },
+    "import/resolver": {
+      "typescript": {}
+    },
     "import/extensions": [
-      ".js",
-      ".jsx",
       ".ts",
-      ".tsx"
+      ".tsx",
+      ".js",
+      ".jsx"
     ]
   }
 }

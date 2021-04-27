@@ -4,10 +4,10 @@ module.exports = ( api ) => {
     presets: [
       [ "@babel/env", {
         debug: true,
-        modules: false,
+        modules: "auto",
         useBuiltIns: "usage",
         corejs: "core-js@3",
-        targets: "> 1%, not dead",
+        targets: { browsers: "> 1%, not dead", node: "current" },
       } ],
       "@babel/typescript",
       "@babel/react",
