@@ -3,7 +3,7 @@ module.exports = ( api ) => {
   return {
     presets: [
       [ "@babel/env", {
-        debug: true,
+        debug: false,
         modules: "auto",
         useBuiltIns: "usage",
         corejs: "core-js@3",

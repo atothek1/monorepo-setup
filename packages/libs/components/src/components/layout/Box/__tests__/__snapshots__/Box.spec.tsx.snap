@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box snapshots should render as <main> tag 1`] = `
+<main
+  class="root"
+  data-testid="testid.box"
+>
+  test
+</main>
+`;
+
+exports[`Box snapshots should render default 1`] = `
+<div
+  class="root"
+  data-testid="testid.box"
+>
+  test
+</div>
+`;
+
+exports[`Box snapshots should render with column classname 1`] = `
+<div
+  class="root column"
+  data-testid="testid.box"
+>
+  test
+</div>
+`;
+
+exports[`Box snapshots should render with custom classname 'test' 1`] = `
+<div
+  class="root test"
+  data-testid="testid.box"
+>
+  test
+</div>
+`;

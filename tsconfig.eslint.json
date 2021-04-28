@@ -2,6 +2,7 @@
   "extends": "./tsconfig.json",
   "include": [
     "./build/**/*",
-    "./config/**/*"
+    "./config/**/*",
+    "./global.d.ts"
   ]
 }

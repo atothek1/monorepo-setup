@@ -4,7 +4,6 @@
     "./config/**/*",
     "./res/**/*",
     "./src/**/*",
-    "./global.d.ts",
-    "./jest.config.js"
+    "./global.d.ts"
   ]
 }

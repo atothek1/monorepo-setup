@@ -1,0 +1,13 @@
+.root {
+  // reset
+  border: 0;
+  outline: none;
+  text-align: center;
+  color: white;
+  background-color: dodgerblue;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  :disabled {
+    background-color: lightgray;
+  }
+}

@@ -31,7 +31,7 @@
     "noUncheckedIndexedAccess": true,      /* Include 'undefined' in index signature results */
 
     "importHelpers": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "lib": [
       "DOM",
