@@ -1,8 +1,9 @@
 {
   "extends": "../../../tsconfig.json",
-  "compilerOptions": {},
   "include": [
+    "./res/**/*",
+    "./src/**/*",
     "./global.d.ts",
-    "./src/**/*"
+    "./index.ts"
   ]
 }
