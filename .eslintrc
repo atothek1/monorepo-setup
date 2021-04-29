@@ -3,16 +3,18 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "tsconfigRootDir": ".",
-    "project": "tsconfig.eslint.json",
+    "project": ["tsconfig.eslint.json"],
     "ecmaVersion": 2020,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    }
+    },
+    "extraFileExtensions":[ ".spec.ts", ".spec.tsx", ".d.ts" ]
   },
   "extends": [
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:jest/recommended",
     "plugin:import/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
@@ -26,6 +28,7 @@
   "plugins": [
     "react",
     "react-hooks",
+    "jest",
     "@typescript-eslint/eslint-plugin"
   ],
   "env": {
@@ -35,12 +38,19 @@
   },
   "globals": {
     "__APP_NAME__": "readonly",
+    "__LIB_NAME__": "readonly",
+    "__MOD_NAME__": "readonly",
     "__VERSION__": "readonly",
     "__CONFIG__": "readonly",
     "__ENVIRONMENT__": "readonly",
     "__IS_DEVELOPMENT__": "readonly",
     "__IS_PRODUCTION__": "readonly"
   },
+  "ignorePatterns": [
+    "**/coverage/*",
+    "**/dist/*",
+    "**/temp/*"
+  ],
   "rules": {
     // general code style settings
     "indent": [ "error", 2, { "SwitchCase": 1 } ],
@@ -75,6 +85,8 @@
       "forbidDefaultForRequired": true,
       "ignoreFunctionalComponents": true
     } ],
+    "react/button-has-type":"off",
+
     // imports plugin
     // "import/extensions": "off",
     "import/prefer-default-export": "off",
@@ -96,16 +108,12 @@
   },
   "overrides": [
     {
-      "files": [ "webpack.js", "webpack.*.js", "babel.*.js", "commitlint.*.js" ],
+      "files": [ "*.js", "*.jsx" ],
       "rules": {
         "import/no-extraneous-dependencies": "off",
         "import/no-dynamic-require": "off",
-        "global-require": "off"
-      }
-    },
-    {
-      "files": [ "*.js", "*.jsx" ],
-      "rules": {
+        "global-require": "off",
+
         "@typescript-eslint/no-unused-vars": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-unsafe-member-access": "off",
@@ -113,7 +121,9 @@
         "@typescript-eslint/no-unsafe-return": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/no-var-requires": "off"
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/require-await": "off",
+        "@typescript-eslint/unbound-method": "off"
       }
     }
   ],
@@ -122,10 +132,10 @@
       "version": "detect"
     },
     "import/extensions": [
-      ".js",
-      ".jsx",
       ".ts",
-      ".tsx"
+      ".tsx",
+      ".js",
+      ".jsx"
     ]
   }
 }

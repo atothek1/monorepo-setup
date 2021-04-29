@@ -31,16 +31,13 @@
     "noUncheckedIndexedAccess": true,      /* Include 'undefined' in index signature results */
 
     "importHelpers": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "lib": [
       "DOM",
       "ES5",
       "ES6",
       "ES7"
-    ],
-    "typeRoots": [
-      "./node_modules/@types"
     ]
   },
   "exclude": [

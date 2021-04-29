@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button snapshots should render as type reset 1`] = `
+<button
+  class="root"
+  data-testid="testid.button"
+  type="reset"
+>
+  test
+</button>
+`;
+
+exports[`Button snapshots should render as type submit 1`] = `
+<button
+  class="root"
+  data-testid="testid.button"
+  type="submit"
+>
+  test
+</button>
+`;
+
+exports[`Button snapshots should render default 1`] = `
+<button
+  class="root"
+  data-testid="testid.button"
+  type="button"
+>
+  test
+</button>
+`;
+
+exports[`Button snapshots should render disabled 1`] = `
+<button
+  class="root"
+  data-testid="testid.button"
+  disabled=""
+  type="button"
+>
+  test
+</button>
+`;
