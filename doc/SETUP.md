@@ -1,14 +1,12 @@
 # Setup
 
-Here are all single steps described to install and setup a monorepository.
+Here are all single steps described to install and setup a mono repository.
 The Project is focused on using Typescript and will support styled-components as well as SASS
-
-# Ads-Creator Monorepo
 
 ## Motivation
 
 ### why lerna?
-As there are different tools then lerna to manage a monorepo, lerna is widely adopted in the opensource community and is quite mature. 
+As there are different tools then lerna to manage a monorepo, lerna is widely adopted in the opensource community and is quite mature.
 
 There are tools like npm 7 with workspaces, pnpm and rush, yarn 2 to name a few. But lerna is still the number 1 in adoption.
 
@@ -53,7 +51,7 @@ npm i -D @commitlint/{config-conventional,config-lerna-scopes,cli} standard-vers
 #### setup husky for integration of commitlint
 
 create [config/commitlint.config.js](../config/commitlint.config.js) file.
-adding husky for running commitlint and eslint as pre-commit and commit-msg to [package.json](../package.json) 
+adding husky for running commitlint and eslint as pre-commit and commit-msg to [package.json](../package.json)
 
 The commitlint config is extended to support some special requirements to the project.
 ```json
@@ -93,22 +91,24 @@ npm i -D @babel/{cli,core,preset-env,preset-typescript,preset-react} babel-plugi
 
 ### installing webpack packages
 ```shell script
-npm i -D webpack webpack-cli webpack-dev-server webpack-merge babel-loader clean-webpack-plugin copy-webpack-plugin css-loader file-loader sass-loader style-loader url-loader node-sass case-sensitive-paths-webpack-plugin css-minimizer-webpack-plugin html-webpack-plugin mini-css-extract-plugin terser-webpack-plugin @statoscope/ui-webpack webpack-bundle-analyzer 
+npm i -D webpack webpack-cli webpack-dev-server webpack-merge babel-loader clean-webpack-plugin copy-webpack-plugin css-loader file-loader sass-loader style-loader url-loader node-sass case-sensitive-paths-webpack-plugin css-minimizer-webpack-plugin html-webpack-plugin mini-css-extract-plugin terser-webpack-plugin @statoscope/ui-webpack webpack-bundle-analyzer
 ```
 
 ### installing eslint packages
 ```shell script
-npm i -D eslint eslint-config-airbnb-typescript eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-jsx-a11y
+npm i -D eslint eslint-config-airbnb-typescript eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-jsx-a11y eslint-plugin-jest
 ```
 
 #### setup eslint configs
 
-### installing jest packages
+### installing jest and testing-library packages
 ```shell script
-npm i -D jest jest-styled-components babel-jest
+npm i -D jest@next @types/jest jest-styled-components @testing-library/react @testing-library/jest-dom
 ```
 
 #### setup jest configs
+
+* create [config/jest.config.js](../config/jest.config.js) file.
 
 ### installing storybook packages
 

@@ -3,6 +3,21 @@ a guide to setup a monorepository
 
 For the full setup from scratch description please see here [Setup](./doc/SETUP.md)
 
+## Goal of the project
+
+The Idea of the project is to serve the following
+
+* provide a structured and solid foundation for complex enterprise grade project setups
+* explaining the different core principles and technologies of modern react based projects
+  * build system with typescript, webpack and babel
+  * coding standards with eslint
+  * unit tests with jest and testing library for react
+  * using storybook for isolated component development
+* to be a starting point for setting up new projects
+* provide examples alongside with explanations of:
+  * developing components, libraries and application with reusability and maintainability in mind
+  * writing consistent unit tests
+
 ## getting started
 
 ```
@@ -10,7 +25,7 @@ git clone https://github.com/atothek1/monorepo-setup.git
 cd monorepo-setup
 npx lerna bootstrap
 ```
-## structure
+## Structure & Architecture
 
 Below is a highlevel folder structure. The monorepo distinguish between 3 types of packages, apps, libs and mods.
 
@@ -25,10 +40,11 @@ Examples:
 * backoffice
 
 ### libs
-A library(lib) package is a scoped set of functionality. 
+A library(lib) package is a scoped set of functionality.
 A library can use other libraries but it can NOT use modules or applications.
 
 Examples:
+* auth
 * utils
 * components
 * services
@@ -37,12 +53,12 @@ Examples:
 ### mods
 A module(mod) package provides a clear scoped set of functionality that is close to an application.
 It contains all logic to provide a sealed set of features, including services, components, pages, etc.
-It provides an interface how to integrate it into an application or a module.
-It is NOT standalone and can NOT be deployed and served as an application. 
+It provides an interface how to integrate it into an application or an other module.
+It is NOT standalone and can NOT be deployed and served as an application.
 A module can use/integrate libraries and other modules, but it can NOT integrate applications.
 
 Examples:
-* auth
+* login
 * registration
 * shopping-cart
 * post
@@ -74,6 +90,14 @@ root
         |-- res/
         |-- src/
 ```
+## FAQ
+
+### Why have a dedicated tsconfig for eslint?
+Tsconfig files can be extended, but they are not merged to all respects.
+That applies especially to array based configurations like, include and exclude.
+
+As eslint is configured with the typescript parser, we still want to also lint all js files
+but do not want them in to be part of the build or testing pipeline.
 
 ## lerna commands
 
