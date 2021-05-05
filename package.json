@@ -28,7 +28,10 @@
     "test": "lerna run test --concurrency 1 --stream --since HEAD --exclude-dependents",
     "quality": "npm run type && npm run lint:fix && npm run test",
     "build:example-app": "lerna run build --scope @mono/example --stream",
-    "start:example-app": "lerna run start --scope @mono/example --stream"
+    "start:example-app": "lerna run start --scope @mono/example --stream",
+    "prestorybook": "rimraf node_modules/.cache/storybook",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "husky": {
     "hooks": {
@@ -47,6 +50,11 @@
     "@commitlint/config-conventional": "^12.1.1",
     "@commitlint/config-lerna-scopes": "^12.1.1",
     "@statoscope/ui-webpack": "^4.0.0",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/builder-webpack5": "^6.2.9",
+    "@storybook/react": "^6.2.9",
     "@types/node": "^14.14.37",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
@@ -72,6 +80,8 @@
     "mini-css-extract-plugin": "^1.4.0",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "rimraf": "^3.0.2",
     "sass-loader": "^11.0.1",
     "standard-version": "^9.1.1",

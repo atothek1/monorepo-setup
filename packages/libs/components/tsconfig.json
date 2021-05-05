@@ -3,6 +3,7 @@
   "include": [
     "./res/**/*",
     "./src/**/*",
+    "./stories/**/*",
     "./global.d.ts"
   ]
 }

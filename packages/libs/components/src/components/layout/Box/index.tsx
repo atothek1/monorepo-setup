@@ -4,13 +4,13 @@ import { AsProps } from "../../../types";
 import { BoxAllowedAsValues } from "./types";
 import styles from "./styles.scss";
 
-interface BoxProps extends TestIdProps, AsProps<BoxAllowedAsValues> {
+export interface BoxProps extends TestIdProps, AsProps<BoxAllowedAsValues> {
   readonly children: React.ReactNode;
   readonly column?: boolean;
   readonly className?: string;
 }
 
-export function Box( props: BoxProps ): JSX.Element {
+export const Box: React.FC<BoxProps> = ( props: BoxProps ): JSX.Element => {
   const {
     children,
     testId,
@@ -20,5 +20,5 @@ export function Box( props: BoxProps ): JSX.Element {
   } = props;
 
   const classNames = cn( styles.root, column && styles.column, className );
-  return <Comp className={ classNames } data-testid={ testId }>{children}</Comp>;
-}
+  return <Comp data-testid={ testId } className={ classNames }>{children}</Comp>;
+};

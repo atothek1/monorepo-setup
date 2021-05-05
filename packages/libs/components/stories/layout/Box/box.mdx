@@ -1,0 +1,42 @@
+import { Story, ArgsTable, Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { Box } from "../../../src";
+
+<Meta
+    title="Components/Layout/Box"
+    component={Box}
+/>
+
+## Table of content
+
+- [Default Box](#default-box)
+- [Box as column](#box-as-column)
+- [Box with custom className](#box-with-custom-className)
+
+## Default Box
+<Canvas>
+    <Story id="components-layout-box--default" />
+</Canvas>
+
+## Box as column
+<Canvas>
+    <Story id="components-layout-box--column" />
+</Canvas>
+
+## Box with custom className
+<Canvas>
+    <Story id="components-layout-box--with-border-and-padding" />
+</Canvas>
+
+```jsx
+import cn from "classname";
+import { Box } from "@mono/components";
+import styles from "./styles.scss";
+
+<Box className={ cn( styles.withBorderAndPadding ) }>
+With Border and padding Style Box
+</Box>
+```
+
+## Not yet working
+
+<ArgsTable story="." />

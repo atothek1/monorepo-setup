@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./styles.scss";
 import { ButtonAllowedTypeValues } from "./types";
 
-interface ButtonProps extends TestIdProps {
+export interface ButtonProps extends TestIdProps {
   readonly children: React.ReactNode;
   readonly isDisabled?: boolean;
   readonly type?: ButtonAllowedTypeValues;

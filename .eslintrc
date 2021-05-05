@@ -9,7 +9,7 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "extraFileExtensions":[ ".spec.ts", ".spec.tsx", ".d.ts" ]
+    "extraFileExtensions":[ ".spec.ts", ".spec.tsx", ".d.ts", ".stories.tsx" ]
   },
   "extends": [
     "plugin:react/recommended",
@@ -107,6 +107,13 @@
     } ]
   },
   "overrides": [
+    {
+      "files": [ "*.stories.tsx" ],
+      "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "react/jsx-props-no-spreading": "off"
+      }
+    },
     {
       "files": [ "*.js", "*.jsx" ],
       "rules": {

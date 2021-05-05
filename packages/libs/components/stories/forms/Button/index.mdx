@@ -1,0 +1,34 @@
+import { Story, ArgsTable, Meta, Canvas } from '@storybook/addon-docs/blocks';
+import {Button} from "../../../src";
+
+<Meta
+    title="Components/Forms/Button"
+    component={Button}
+/>
+
+## Table of content
+
+- [Default](#default)
+- [Box as column](#box-as-column)
+- [Box with custom className](#box-with-custom-className)
+
+## Default
+<Canvas>
+    <Story id="components-forms-button--default" />
+</Canvas>
+
+## With Click Handler
+<Canvas>
+    <Story id="components-forms-button--with-on-click" />
+</Canvas>
+
+```jsx
+import { Button } from "@mono/components";
+<Button>
+Default Button
+</Button>
+```
+
+## Button Properties
+
+<ArgsTable story="." />

@@ -4,6 +4,7 @@
     "./config/**/*",
     "./res/**/*",
     "./src/**/*",
+    "./stories/**/*",
     "./global.d.ts",
     "./index.ts"
   ]
