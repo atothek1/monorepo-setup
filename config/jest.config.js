@@ -42,9 +42,7 @@ module.exports = packagePath => ( {
     __ENVIRONMENT__: "production",
     __IS_DEVELOPMENT__: false,
     __IS_PRODUCTION__: true,
-    __APP_NAME__: "test-app",
-    __LIB_NAME__: "test-lib",
-    __MOD_NAME__: "test-mod",
+    __NAME__: "test-app",
     __VERSION__: "1.0.0-test",
   },
   coverageReporters: [

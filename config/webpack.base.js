@@ -153,7 +153,7 @@ module.exports = ( rootPath, packagePath ) => {
       new webpack.DefinePlugin( {
         __IS_PRODUCTION__: JSON.stringify( isProductionBuild() ),
         __IS_DEVELOPMENT__: JSON.stringify( isDevelopmentBuild() ),
-        __APP_NAME__: JSON.stringify( appConfig.name ),
+        __NAME__: JSON.stringify( appConfig.name ),
         __VERSION__: JSON.stringify( packageInfo.version ),
         __ENVIRONMENT__: JSON.stringify( getEnvironment() ),
         __CONFIG__: JSON.stringify( appConfig ),

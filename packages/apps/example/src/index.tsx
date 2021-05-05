@@ -5,7 +5,7 @@ import { App } from "./app";
 
 render(
   <App
-    name={ __APP_NAME__ }
+    name={ __NAME__ }
     version={ __VERSION__ }
     environment={ __ENVIRONMENT__ }
   />,
