@@ -1,6 +1,6 @@
 import cn from "classnames";
 import React from "react";
-import { AsProps } from "../../../types";
+import { AsProps } from "../../types";
 import { BoxAllowedAsValues } from "./types";
 import styles from "./styles.scss";
 
