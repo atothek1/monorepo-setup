@@ -5,7 +5,7 @@ const HtmlPlugin = require( "html-webpack-plugin" );
 const MiniCssExtractPlugin = require( "mini-css-extract-plugin" );
 const TerserPlugin = require( "terser-webpack-plugin" );
 const { CleanWebpackPlugin } = require( "clean-webpack-plugin" );
-const { getEnvironment, isDevelopmentBuild, isProductionBuild } = require( "../build/webpack.utils" );
+const { getEnvironment, isDevelopmentBuild, isProductionBuild } = require( "./webpack.utils" );
 
 module.exports = ( rootPath, packagePath ) => {
 
