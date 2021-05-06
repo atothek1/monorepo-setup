@@ -37,9 +37,7 @@
     "node": true
   },
   "globals": {
-    "__APP_NAME__": "readonly",
-    "__LIB_NAME__": "readonly",
-    "__MOD_NAME__": "readonly",
+    "__NAME__": "readonly",
     "__VERSION__": "readonly",
     "__CONFIG__": "readonly",
     "__ENVIRONMENT__": "readonly",

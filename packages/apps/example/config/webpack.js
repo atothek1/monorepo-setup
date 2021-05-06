@@ -6,7 +6,7 @@ const {
   getEnvironment,
   isValidEnvironment,
   getValidEnvironments,
-} = require( resolve( rootPath, "build", "webpack.utils" ) );
+} = require( resolve( rootPath, "config", "webpack.utils" ) );
 
 const environment = getEnvironment();
 

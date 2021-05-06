@@ -27,8 +27,8 @@ module.exports = packagePath => ( {
     "json",
   ],
   moduleNameMapper: {
-    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/staticfiles.mock.js",
-    "\\.(css|less|scss)$": "<rootDir>/src/__mocks__/scss.mock.js",
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/staticfiles.mock.js",
+    "\\.(css|less|scss)$": "<rootDir>/__mocks__/scss.mock.js",
     "@components/(.*)": "<rootDir>/src/components/$1",
     "@containers/(.*)": "<rootDir>/src/containers/$1",
     "@pages/(.*)": "<rootDir>/src/pages/$1",
@@ -37,15 +37,12 @@ module.exports = packagePath => ( {
     "@store/(.*)": "<rootDir>/src/store/$1",
     "@res/(.*)": "<rootDir>/res/$1",
     "@mocks/(.*)": "<rootDir>/__mocks__/$1",
-    "@tests/(.*)": "<rootDir>/__tests__/$1",
   },
   globals: {
     __ENVIRONMENT__: "production",
     __IS_DEVELOPMENT__: false,
     __IS_PRODUCTION__: true,
-    __APP_NAME__: "test-app",
-    __LIB_NAME__: "test-lib",
-    __MOD_NAME__: "test-mod",
+    __NAME__: "test-app",
     __VERSION__: "1.0.0-test",
   },
   coverageReporters: [
