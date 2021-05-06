@@ -28,7 +28,7 @@ npm init
 Lerna should be once installed globally, as an alternative npx could be used.
 
 ```shell script
-npm i -g lerna
+npm i -g lerna rimraf
 ```
 
 ### initialize lerna
@@ -93,6 +93,13 @@ npm i -D @babel/{cli,core,preset-env,preset-typescript,preset-react} babel-plugi
 ```shell script
 npm i -D webpack webpack-cli webpack-dev-server webpack-merge babel-loader clean-webpack-plugin copy-webpack-plugin css-loader file-loader sass-loader style-loader url-loader node-sass case-sensitive-paths-webpack-plugin css-minimizer-webpack-plugin html-webpack-plugin mini-css-extract-plugin terser-webpack-plugin @statoscope/ui-webpack webpack-bundle-analyzer
 ```
+
+#### setup webpack config
+
+* create [config/webpack.utils.js](../config/webpack.utils.js) file.
+* create [config/webpack.base.js](../config/webpack.base.js) file.
+* create [config/webpack.production.js](../config/webpack.production.js) file.
+* create [config/webpack.development.js](../config/webpack.development.js) file.
 
 ### installing eslint packages
 ```shell script

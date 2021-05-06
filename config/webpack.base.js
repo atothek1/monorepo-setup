@@ -31,6 +31,7 @@ module.exports = ( rootPath, packagePath ) => {
     resolve: {
       extensions: [ ".ts", ".tsx", ".js", ".jsx" ],
       mainFields: [ "browser", "main", "module" ],
+      // setup aliases used in application packages
       alias: {
         "@components": `${ packagePath }/src/components`,
         "@containers": `${ packagePath }/src/containers`,
@@ -43,9 +44,9 @@ module.exports = ( rootPath, packagePath ) => {
     },
     module: {
       rules: [
-        // babel-loader
+        // babel-loader, transform TypeScript with babel
         {
-          test: /\.tsx?$/,
+          test: /\.(ts|tsx)?$/,
           include: /(src|res)/,
           exclude: /node_modules/,
           use: {
@@ -58,6 +59,7 @@ module.exports = ( rootPath, packagePath ) => {
           },
         },
         // sass loader
+        // is applied bottom to top,
         {
           test: /\.scss$/,
           use: [
@@ -88,6 +90,7 @@ module.exports = ( rootPath, packagePath ) => {
         },
       ],
     },
+    // configure bundle optimization
     optimization: {
       moduleIds: "deterministic",
       minimize: true,
@@ -101,20 +104,15 @@ module.exports = ( rootPath, packagePath ) => {
           },
         } ),
       ],
+      // webpack own scrips to be bundled into own single file
       runtimeChunk: "single",
       splitChunks: {
         filename: "[name].[contenthash].js",
         chunks: "initial",
         // enables long time caching for vendor dependencies
         cacheGroups: {
-          "vendors.react": {
-            priority: 90,
-            enforce: true,
-            chunks: "all",
-            name: "vendors.react",
-            test: /node_modules\/(react|react-dom|react-is)/,
-            reuseExistingChunk: true,
-          },
+          // bundle react router packages into own chunk
+          // must have higher prio then the chunk config that has react in ot
           "vendors.router": {
             priority: 100,
             enforce: true,
@@ -123,6 +121,16 @@ module.exports = ( rootPath, packagePath ) => {
             test: /node_modules\/(react-router|react-router-dom|history)/,
             reuseExistingChunk: true,
           },
+          // bundle react core packages into one chunk
+          "vendors.react": {
+            priority: 90,
+            enforce: true,
+            chunks: "all",
+            name: "vendors.react",
+            test: /node_modules\/(react|react-dom|react-is)/,
+            reuseExistingChunk: true,
+          },
+          // bundle core-js into own chunk
           "vendors.core": {
             enforce: true,
             chunks: "all",
@@ -130,6 +138,7 @@ module.exports = ( rootPath, packagePath ) => {
             test: /node_modules\/(core-js)/,
             reuseExistingChunk: true,
           },
+          // bundle remaining vendor packages into one chunk
           vendors: {
             enforce: true,
             chunks: "all",
