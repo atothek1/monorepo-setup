@@ -24,10 +24,13 @@
     "quality": "npm run type && npm run lint && npm run test"
   },
   "dependencies": {
+    "@mono/styled": "^1.0.0",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/react-hooks": "^5.1.2",
-    "@testing-library/user-event": "^13.1.5"
+    "@testing-library/user-event": "^13.1.5",
+    "jest-styled-components": "^7.0.4",
+    "styled-components": "^5.3.0"
   },
   "peerDependencies": {
     "core-js": "^3.10.1",

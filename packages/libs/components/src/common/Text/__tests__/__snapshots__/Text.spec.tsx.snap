@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text snapshots should render as h1 tag 1`] = `
+.c0 {
+  font-family: Roboto;
+  font-weight: 400;
+  color: #222222;
+  font-style: normal;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+<h1
+  class="Text___StyledStyledText-yp3dax-0 c0"
+  data-testid="testid.text"
+>
+  test
+</h1>
+`;
+
+exports[`Text snapshots should render as p tag 1`] = `
+.c0 {
+  font-family: Roboto;
+  font-weight: 400;
+  color: #222222;
+  font-style: normal;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+<p
+  class="Text___StyledStyledText-yp3dax-0 c0"
+  data-testid="testid.text"
+>
+  test
+</p>
+`;
+
+exports[`Text snapshots should render default 1`] = `
+.c0 {
+  font-family: Roboto;
+  font-weight: 400;
+  color: #222222;
+  font-style: normal;
+  font-stretch: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+<span
+  class="Text___StyledStyledText-yp3dax-0 c0"
+  data-testid="testid.text"
+>
+  test
+</span>
+`;
