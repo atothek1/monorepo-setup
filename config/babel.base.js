@@ -12,6 +12,6 @@ module.exports = ( api ) => {
       "@babel/typescript",
       "@babel/react",
     ],
-    plugins: [],
+    plugins: [ "babel-plugin-styled-components" ],
   };
 };

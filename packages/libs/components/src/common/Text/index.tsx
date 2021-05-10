@@ -17,7 +17,7 @@ function InnerText( props: TextProps, ref: ForwardedRef<any> ): JSX.Element {
   return (
     <StyledText
       ref={ ref }
-      testId={ testId }
+      data-testid={ testId }
       as={ as }
       bold={ bold }
       color={ color }
