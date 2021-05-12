@@ -5,9 +5,9 @@
   text-align: center;
   color: white;
   background-color: dodgerblue;
-  padding-left: 0.8rem;
-  padding-right: 0.8rem;
-  :disabled {
+  padding: 0.8rem;
+  border-radius: 4px;
+  &:disabled {
     background-color: lightgray;
   }
 }
