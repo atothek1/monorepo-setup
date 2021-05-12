@@ -28,7 +28,8 @@
     "test": "lerna run test --concurrency 1 --stream --since HEAD --exclude-dependents",
     "quality": "npm run type && npm run lint:fix && npm run test",
     "build:example-app": "lerna run build --scope @mono/example --stream",
-    "start:example-app": "lerna run start --scope @mono/example --stream"
+    "start:example-app": "lerna run start --scope @mono/example --stream",
+    "styleguide": "styleguidist server --config ./config/styleguide.config.js"
   },
   "husky": {
     "hooks": {
@@ -74,6 +75,8 @@
     "mini-css-extract-plugin": "^1.4.0",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.7",
+    "react-docgen-typescript": "^1.22.0",
+    "react-styleguidist": "^11.1.6",
     "rimraf": "^3.0.2",
     "sass-loader": "^11.0.1",
     "standard-version": "^9.1.1",
