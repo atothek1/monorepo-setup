@@ -24,8 +24,8 @@
     "quality": "npm run type && npm run lint && npm run test"
   },
   "peerDependencies": {
-    "core-js": "^3.10.1",
-    "formik": "^2.2.6",
+    "core-js": "^3.14.0",
+    "formik": "^2.2.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router": "^5.2.0",
@@ -33,13 +33,13 @@
     "yup": "^0.32.9"
   },
   "devDependencies": {
-    "@types/react": "^17.0.3",
-    "@types/react-dom": "^17.0.3",
-    "@types/react-router": "^5.1.13",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.7",
+    "@types/react-router": "^5.1.15",
     "@types/react-router-dom": "^5.1.7",
     "classnames": "^2.3.1",
-    "core-js": "^3.10.1",
-    "formik": "^2.2.6",
+    "core-js": "^3.14.0",
+    "formik": "^2.2.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router": "^5.2.0",
