@@ -112,7 +112,7 @@ module.exports = ( rootPath, packagePath ) => {
         // enables long time caching for vendor dependencies
         cacheGroups: {
           // bundle react router packages into own chunk
-          // must have higher prio then the chunk config that has react in ot
+          // must have higher prio then the chunk config that has react in it
           "vendors.router": {
             priority: 100,
             enforce: true,
