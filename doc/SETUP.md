@@ -1,7 +1,7 @@
 # Setup
 
 Here are all single steps described to install and setup a mono repository.
-The Project is focused on using Typescript and will support styled-components as well as SASS
+The Project is focused on using Typescript and will support styled-components.
 
 ## Motivation
 
@@ -42,6 +42,8 @@ lerna init
 ```shell script
 npm i -D core-js cross-env husky@4 nodemon rimraf
 ```
+Note: using husky v4 makes the usage and integration easier as the latest breaking changes are not compatible with the known one.
+Later a migration to the latest husky or an alternative, like [lefthook](https://github.com/evilmartians/lefthook), will be applied.
 
 ### installing commitlint packages
 ```shell script
@@ -58,7 +60,7 @@ The commitlint config is extended to support some special requirements to the pr
 {
   "husky": {
     "hooks": {
-      "pre-commit": "npm run quality",
+      "pre-commit": "npm run ci",
       "commit-msg": "commitlint --config ./config/commitlint.config.js --env HUSKY_GIT_PARAMS"
     }
   }
@@ -91,7 +93,7 @@ npm i -D @babel/{cli,core,preset-env,preset-typescript,preset-react} babel-plugi
 
 ### installing webpack packages
 ```shell script
-npm i -D webpack webpack-cli webpack-dev-server webpack-merge babel-loader clean-webpack-plugin copy-webpack-plugin css-loader file-loader sass-loader style-loader url-loader node-sass case-sensitive-paths-webpack-plugin css-minimizer-webpack-plugin html-webpack-plugin mini-css-extract-plugin terser-webpack-plugin @statoscope/ui-webpack webpack-bundle-analyzer
+npm i -D webpack webpack-cli webpack-dev-server webpack-merge babel-loader clean-webpack-plugin copy-webpack-plugin file-loader url-loader case-sensitive-paths-webpack-plugin html-webpack-plugin terser-webpack-plugin @statoscope/ui-webpack webpack-bundle-analyzer
 ```
 
 #### setup webpack config
@@ -117,6 +119,6 @@ npm i -D jest@next @types/jest jest-styled-components @testing-library/react @te
 
 * create [config/jest.config.js](../config/jest.config.js) file.
 
-### installing storybook packages
 
-#### setup storybook configs
+TODO:
+* styleguidist installation and setup
