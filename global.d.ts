@@ -31,8 +31,3 @@ declare interface ReadonlyDictionary<T = unknown> {
 declare interface TestIdProps {
   readonly testId?: string;
 }
-
-declare module "*.scss" {
-  const content: Record<string, string>;
-  export default content;
-}
