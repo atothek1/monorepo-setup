@@ -1,8 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button snapshots should render as type reset 1`] = `
+.c0 {
+  border: 0;
+  outline: none;
+  text-align: center;
+  color: white;
+  background-color: dodgerblue;
+  padding: 0.8rem;
+  border-radius: 4px;
+}
+
 <button
-  class="root"
+  class="Button___StyledStyledButton-w4d9ie-0 c0"
   data-testid="testid.button"
   type="reset"
 >
@@ -11,8 +21,18 @@ exports[`Button snapshots should render as type reset 1`] = `
 `;
 
 exports[`Button snapshots should render as type submit 1`] = `
+.c0 {
+  border: 0;
+  outline: none;
+  text-align: center;
+  color: white;
+  background-color: dodgerblue;
+  padding: 0.8rem;
+  border-radius: 4px;
+}
+
 <button
-  class="root"
+  class="Button___StyledStyledButton-w4d9ie-0 c0"
   data-testid="testid.button"
   type="submit"
 >
@@ -21,8 +41,18 @@ exports[`Button snapshots should render as type submit 1`] = `
 `;
 
 exports[`Button snapshots should render default 1`] = `
+.c0 {
+  border: 0;
+  outline: none;
+  text-align: center;
+  color: white;
+  background-color: dodgerblue;
+  padding: 0.8rem;
+  border-radius: 4px;
+}
+
 <button
-  class="root"
+  class="Button___StyledStyledButton-w4d9ie-0 c0"
   data-testid="testid.button"
   type="button"
 >
@@ -31,8 +61,18 @@ exports[`Button snapshots should render default 1`] = `
 `;
 
 exports[`Button snapshots should render disabled 1`] = `
+.c0 {
+  border: 0;
+  outline: none;
+  text-align: center;
+  color: white;
+  background-color: dodgerblue;
+  padding: 0.8rem;
+  border-radius: 4px;
+}
+
 <button
-  class="root"
+  class="Button___StyledStyledButton-w4d9ie-0 c0"
   data-testid="testid.button"
   disabled=""
   type="button"

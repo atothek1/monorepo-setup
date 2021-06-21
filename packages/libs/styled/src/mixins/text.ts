@@ -1,10 +1,12 @@
 import {
-  css, DefaultTheme, FlattenInterpolation, ThemedStyledProps,
+  css,
+  DefaultTheme,
+  FlattenInterpolation,
+  ThemedStyledProps,
 } from "styled-components";
-import "../styled.d";
 
-function textBase( color?: string, bold = false ): FlattenInterpolation<ThemedStyledProps<any, DefaultTheme>> {
-  return css<DefaultTheme>`
+function textBase( color?: string, bold = false ): FlattenInterpolation<ThemedStyledProps<unknown, DefaultTheme>> {
+  return css`
     font-family: ${ ( { theme } ) => theme.typo.fontFamily };
     font-weight: ${ ( { theme } ) => ( bold ? theme.typo.fontWeightBold : theme.typo.fontWeight ) };
     color: ${ ( { theme } ) => ( color || theme.colors.colorTextDark ) };
@@ -14,16 +16,16 @@ function textBase( color?: string, bold = false ): FlattenInterpolation<ThemedSt
     `;
 }
 
-export function textNormal( color?: string ): FlattenInterpolation<ThemedStyledProps<any, DefaultTheme>> {
-  return css<DefaultTheme>`
+export function textNormal( color?: string ): FlattenInterpolation<ThemedStyledProps<unknown, DefaultTheme>> {
+  return css`
     ${ textBase( color, false ) };
     font-size: ${ ( { theme } ) => theme.typo.fontSize };
     line-height: ${ ( { theme } ) => theme.typo.lineHeight };
     `;
 }
 
-export function textNormalBold( color?: string ): FlattenInterpolation<ThemedStyledProps<any, DefaultTheme>> {
-  return css<DefaultTheme>`
+export function textNormalBold( color?: string ): FlattenInterpolation<ThemedStyledProps<unknown, DefaultTheme>> {
+  return css`
     ${ textBase( color, true ) };
     font-size: ${ ( { theme } ) => theme.typo.fontSize };
     line-height: ${ ( { theme } ) => theme.typo.lineHeight };

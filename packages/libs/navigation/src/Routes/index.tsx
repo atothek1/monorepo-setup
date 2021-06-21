@@ -2,11 +2,11 @@ import React from "react";
 import { Route as ReactRoute, Switch } from "react-router";
 import { Route } from "../types";
 
-interface RoutesProps<TId extends string> {
-  readonly routes: ReadonlyArray<Route<TId>>;
+interface RoutesProps<TIds extends string> {
+  readonly routes: ReadonlyArray<Route<TIds>>;
 }
 
-export function Routes<TId extends string>( props: RoutesProps<TId> ): JSX.Element {
+export function Routes<TIds extends string>( props: RoutesProps<TIds> ): JSX.Element {
   const { routes } = props;
   const routeElements = routes.map( ( route ) => {
     // extract non react-router props, will be used later
