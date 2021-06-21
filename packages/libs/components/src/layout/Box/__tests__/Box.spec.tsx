@@ -10,13 +10,8 @@ describe( "Box snapshots", () => {
     expect( getByTestId( testId ) ).toMatchSnapshot();
   } );
 
-  it( "should render with column classname", () => {
+  it( "should render as column", () => {
     const { getByTestId } = render( <Box testId={ testId } column>test</Box> );
-    expect( getByTestId( testId ) ).toMatchSnapshot();
-  } );
-
-  it( "should render with custom classname 'test'", () => {
-    const { getByTestId } = render( <Box testId={ testId } className="test">test</Box> );
     expect( getByTestId( testId ) ).toMatchSnapshot();
   } );
 

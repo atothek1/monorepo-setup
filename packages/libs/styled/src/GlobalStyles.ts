@@ -6,8 +6,10 @@ export const GlobalStyles = createGlobalStyle`
 
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-    * {
-        box-sizing: border-box;
+    *,
+    ::before,
+    ::after {
+      box-sizing: border-box;
     }
     html {
         font-size: 62.5%;
@@ -16,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
     body {
         font-size: ${ ( { theme } ) => theme.typo.fontSize };
     }
-    p, h1, h2, h3, h4, h5, h6 {
+    html, body, p, h1, h2, h3, h4, h5, h6 {
         padding: 0;
         margin: 0;
     }

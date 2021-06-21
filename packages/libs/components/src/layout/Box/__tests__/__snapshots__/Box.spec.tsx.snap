@@ -1,35 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Box snapshots should render as <main> tag 1`] = `
+.c0 {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
 <main
-  class="root"
+  class="Box___StyledStyledBox-sc-1ytnaab-0 c0"
   data-testid="testid.box"
 >
   test
 </main>
 `;
 
+exports[`Box snapshots should render as column 1`] = `
+.c0 {
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+<div
+  class="Box___StyledStyledBox-sc-1ytnaab-0 c0"
+  data-testid="testid.box"
+>
+  test
+</div>
+`;
+
 exports[`Box snapshots should render default 1`] = `
-<div
-  class="root"
-  data-testid="testid.box"
->
-  test
-</div>
-`;
+.c0 {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
 
-exports[`Box snapshots should render with column classname 1`] = `
 <div
-  class="root column"
-  data-testid="testid.box"
->
-  test
-</div>
-`;
-
-exports[`Box snapshots should render with custom classname 'test' 1`] = `
-<div
-  class="root test"
+  class="Box___StyledStyledBox-sc-1ytnaab-0 c0"
   data-testid="testid.box"
 >
   test

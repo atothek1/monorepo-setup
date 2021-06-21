@@ -23,3 +23,5 @@ export interface TextProps extends TestIdProps {
   readonly color?: string;
   readonly css?: string;
 }
+
+export type StyledTextProps = TextProps;
