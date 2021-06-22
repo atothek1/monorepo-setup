@@ -1,4 +1,5 @@
 const { resolve } = require( "path" );
+const path = require( "path" );
 
 const parserOptions = {};
 
@@ -14,11 +15,38 @@ module.exports = {
   styleguideComponents: {
     Wrapper: resolve( __dirname, "../packages/libs/styled/src/StyleguideWrapper" ),
   },
+  getComponentPathLine: ( pathname ) => {
+    const pathParts = pathname.split( "/" );
+    const packageName = pathParts[ 3 ];
+    const componentName = pathParts[ pathParts.length - 2 ];
+    return `import { ${ componentName } } from "@mono/${ packageName }"`;
+  },
+  compilerConfig: {
+    objectAssign: "Object.assign",
+    transforms: {
+      moduleImport: false,
+      dangerousTaggedTemplateString: true,
+    },
+  },
   sections: [
     {
-      name: "Components",
+      name: "Introduction",
       content: "../packages/libs/components/docs/introduction.md",
-      components: "../packages/libs/components/**/index.tsx",
+    },
+    {
+      name: "Common components",
+      content: "../packages/libs/components/src/common/readme.md",
+      components: "../packages/libs/components/src/common/**/index.tsx",
+    },
+    {
+      name: "Forms components",
+      content: "../packages/libs/components/src/forms/readme.md",
+      components: "../packages/libs/components/src/forms/**/index.tsx",
+    },
+    {
+      name: "Layout components",
+      content: "../packages/libs/components/src/layout/readme.md",
+      components: "../packages/libs/components/src/layout/**/index.tsx",
     },
     /* {
       name: "Introduction",

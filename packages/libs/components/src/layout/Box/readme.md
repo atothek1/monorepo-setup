@@ -10,46 +10,53 @@
 
 #### Render with custom css
 ```typescript jsx
-const customCss = `color: red; font-weight: bold`;
+const customCss = `color: red; font-weight: bold; border: 1px solid black; border-radius: 4px;`;
 
-<Text css={ customCss }>My example Text rendered with custom css</Text>
+<Box css={ customCss } padding=".8rem">My example Box rendered with custom css</Box>
 ```
 
-#### Create new Component from Text
-```typescript jsx
+#### Create a new Component from Box
+
+```tsx
 import styled from "styled-components";
 
+// exclude as property as setting it in the attrs directly
+// type CardProps = Omit<BoxProps, "as" | "column">;
 
-const Heading = styled(Text).attrs( props => ({
-  ...props,
-  as: "h1"
-}))``;
+const Card = styled(Box).attrs( props => ( { ...props, column: true, forwardedAs: "article" } ) )`
+    max-width: 36rem;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px rgba( 0, 0, 0, .50);
+    overflow: hidden;
+`;
 
+const CardHeader = styled(Box)
+    .attrs( props => {
+        return {
+            ...props,
+            forwardedAs: "section",
+            justifyContent: "center",
+            alignItems: "center"
+        };
+    } )`
+    min-height: 12.0rem;
+    border-bottom: 1px solid lightgray;
+`;
 
-<Heading>New Heading Component</Heading>
-```
+const CardContent = styled(Box)
+    .attrs( props => {
+        return {
+            ...props,
+            padding: ".8rem",
+            forwardedAs: "section",
+        };
+    } )`
+    height: content-fit;
+`;
 
-#### Wrap Text component
-```typescript jsx
-function InnerFormattedNumber(props, ref) {
-    const {
-        children,
-        locale = "en-US",
-        bold,
-        as,
-    } = props;
-    const options = {
-
-    };
-    return <Text ref={ ref } as={ as } bold={ bold }>{ Number(children).toLocaleString( locale, options ) }</Text>
-};
-const FormattedNumber = React.forwardRef( InnerFormattedNumber );
-
-
-<>
-    <Text>en-US</Text>
-    <FormattedNumber as="p">1234567.89</FormattedNumber>
-    <Text>de-DE</Text>
-    <FormattedNumber as="p" locale="de-DE">1234567.89</FormattedNumber>
-</>
+<Card>
+    <CardHeader>CardHeader mostly an image with overlay text</CardHeader>
+    <CardContent>CardContent summerizing the content details</CardContent>
+</Card>
 ```

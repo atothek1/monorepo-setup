@@ -25,11 +25,13 @@ const customCss = `color: red; font-weight: bold`;
 ```typescript jsx
 import styled from "styled-components";
 
-
 const Heading = styled(Text).attrs( props => ({
   ...props,
-  as: "h1"
-}))``;
+  forwardedAs: "h1"
+}))`
+    font-size: 2rem;
+    font-weight: 900;
+`;
 
 
 <Heading>New Heading Component</Heading>
