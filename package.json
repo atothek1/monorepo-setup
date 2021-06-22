@@ -20,6 +20,8 @@
     "prebootstrap": "npm run clean",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream",
+    "prefull": "lerna run type --concurrency 1 --stream --exclude-dependents && lerna run lint --concurrency 1 --stream --exclude-dependents && lerna run test --concurrency 1 --stream --exclude-dependents",
+    "full": "lerna run build --concurrency 1 --stream --exclude-dependents",
     "type": "lerna run type --concurrency 1 --stream --since HEAD --exclude-dependents",
     "lint": "eslint ./ --ignore-pattern '/packages/*' --config .eslintrc && npm run lint:pkgs",
     "lint:fix": "eslint ./ --ignore-pattern '/packages/*' --config .eslintrc --fix && npm run lint:pkgs-fix",

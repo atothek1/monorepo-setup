@@ -4,6 +4,7 @@ import { Fullscreen } from "@components/index";
 import { Routes } from "@components/app";
 import { Route } from "@mono/navigation";
 import { RouteIds } from "@res/ids";
+import { Helmet } from "react-helmet";
 
 interface AppProps {
   readonly name: string;
@@ -24,6 +25,10 @@ export function App( props: AppProps ): JSX.Element {
 
   return (
     <StrictMode>
+      <Helmet>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+      </Helmet>
       <BrowserRouter>
         <Fullscreen>
           <Routes routes={ routes } />

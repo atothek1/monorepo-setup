@@ -28,7 +28,6 @@ module.exports = packagePath => ( {
   ],
   moduleNameMapper: {
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/staticfiles.mock.js",
-    "\\.(css|less|scss)$": "<rootDir>/__mocks__/scss.mock.js",
     "@components/(.*)": "<rootDir>/src/components/$1",
     "@containers/(.*)": "<rootDir>/src/containers/$1",
     "@pages/(.*)": "<rootDir>/src/pages/$1",
