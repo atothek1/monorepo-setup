@@ -8,10 +8,10 @@ The Project is focused on using Typescript and will support styled-components.
 ### why lerna?
 As there are different tools then lerna to manage a monorepo, lerna is widely adopted in the opensource community and is quite mature.
 
-There are tools like npm 7 with workspaces, pnpm and rush, yarn 2 to name a few. But lerna is still the number 1 in adoption.
+There are tools like npm 7 with workspaces, pnpm + rush, yarn 2 to name a few. But lerna is still the number 1 in adoption.
 
 ### why webpack?
-For all application webpack is the bundler of choice, as it is optimized for apps and has a very powerful toolchain for that purpose.
+For building and shipping applications, webpack is the bundler of choice, as it is optimized for apps and has a very powerful toolchain for that purpose.
 As there as well other tools, webpack is the defacto standard.
 
 ## setup a project
@@ -19,16 +19,16 @@ As there as well other tools, webpack is the defacto standard.
 mkdir my-project
 cd my-myproject
 git init
-npm init
+yarn init
 ```
 
 ## installation of root packages
 
 ### installing lerna globally
-Lerna should be once installed globally, as an alternative npx could be used.
+Lerna should be installed globally, as an alternative npx could be used.
 
 ```shell script
-npm i -g lerna rimraf
+yarn global add lerna rimraf
 ```
 
 ### initialize lerna
@@ -40,14 +40,14 @@ lerna init
 
 ### installing some misc packages
 ```shell script
-npm i -D core-js cross-env husky@4 nodemon rimraf
+yarn add --dev core-js cross-env husky@4 nodemon rimraf
 ```
 Note: using husky v4 makes the usage and integration easier as the latest breaking changes are not compatible with the known one.
 Later a migration to the latest husky or an alternative, like [lefthook](https://github.com/evilmartians/lefthook), will be applied.
 
 ### installing commitlint packages
 ```shell script
-npm i -D @commitlint/{config-conventional,config-lerna-scopes,cli} standard-version
+yarn add --dev @commitlint/{config-conventional,config-lerna-scopes,cli} standard-version
 ```
 
 #### setup husky for integration of commitlint
@@ -60,7 +60,7 @@ The commitlint config is extended to support some special requirements to the pr
 {
   "husky": {
     "hooks": {
-      "pre-commit": "npm run ci",
+      "pre-commit": "yarn ci",
       "commit-msg": "commitlint --config ./config/commitlint.config.js --env HUSKY_GIT_PARAMS"
     }
   }
@@ -69,7 +69,7 @@ The commitlint config is extended to support some special requirements to the pr
 
 ### installing Typescript packages
 ```shell script
-npm i -D  typescript tslib @types/node
+yarn add --dev  typescript tslib @types/node
 ```
 
 #### setup typescript config
@@ -85,7 +85,7 @@ in [tsconfig.json](../tsconfig.json) and [config/tsconfig.eslint.json](../config
 ```
 ### installing babel packages
 ```shell script
-npm i -D @babel/{cli,core,preset-env,preset-typescript,preset-react} babel-plugin-styled-components
+yarn add --dev @babel/{cli,core,preset-env,preset-typescript,preset-react} babel-plugin-styled-components
 ```
 #### setup babel config
 
@@ -93,7 +93,7 @@ npm i -D @babel/{cli,core,preset-env,preset-typescript,preset-react} babel-plugi
 
 ### installing webpack packages
 ```shell script
-npm i -D webpack webpack-cli webpack-dev-server webpack-merge babel-loader clean-webpack-plugin copy-webpack-plugin file-loader url-loader case-sensitive-paths-webpack-plugin html-webpack-plugin terser-webpack-plugin @statoscope/ui-webpack webpack-bundle-analyzer
+yarn add --dev webpack webpack-cli webpack-dev-server webpack-merge babel-loader clean-webpack-plugin copy-webpack-plugin file-loader url-loader case-sensitive-paths-webpack-plugin html-webpack-plugin terser-webpack-plugin @statoscope/ui-webpack webpack-bundle-analyzer
 ```
 
 #### setup webpack config
@@ -105,14 +105,14 @@ npm i -D webpack webpack-cli webpack-dev-server webpack-merge babel-loader clean
 
 ### installing eslint packages
 ```shell script
-npm i -D eslint eslint-config-airbnb-typescript eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-jsx-a11y eslint-plugin-jest
+yarn add --dev eslint eslint-config-airbnb-typescript eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-jsx-a11y eslint-plugin-jest
 ```
 
 #### setup eslint configs
 
 ### installing jest and testing-library packages
 ```shell script
-npm i -D jest@next @types/jest jest-styled-components @testing-library/react @testing-library/jest-dom
+yarn add --dev jest@next @types/jest jest-styled-components @testing-library/react @testing-library/jest-dom
 ```
 
 #### setup jest configs
