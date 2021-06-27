@@ -4,6 +4,8 @@ exports[`Text snapshots should render as h1 tag 1`] = `
 .c0 {
   font-family: Roboto;
   font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.5;
   color: #222222;
   font-style: normal;
   font-stretch: normal;
@@ -11,8 +13,6 @@ exports[`Text snapshots should render as h1 tag 1`] = `
   -moz-letter-spacing: normal;
   -ms-letter-spacing: normal;
   letter-spacing: normal;
-  font-size: 1.6rem;
-  line-height: 1.5;
 }
 
 <h1
@@ -27,6 +27,8 @@ exports[`Text snapshots should render as p tag 1`] = `
 .c0 {
   font-family: Roboto;
   font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.5;
   color: #222222;
   font-style: normal;
   font-stretch: normal;
@@ -34,8 +36,6 @@ exports[`Text snapshots should render as p tag 1`] = `
   -moz-letter-spacing: normal;
   -ms-letter-spacing: normal;
   letter-spacing: normal;
-  font-size: 1.6rem;
-  line-height: 1.5;
 }
 
 <p
@@ -50,6 +50,8 @@ exports[`Text snapshots should render default 1`] = `
 .c0 {
   font-family: Roboto;
   font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.5;
   color: #222222;
   font-style: normal;
   font-stretch: normal;
@@ -57,8 +59,6 @@ exports[`Text snapshots should render default 1`] = `
   -moz-letter-spacing: normal;
   -ms-letter-spacing: normal;
   letter-spacing: normal;
-  font-size: 1.6rem;
-  line-height: 1.5;
 }
 
 <span
