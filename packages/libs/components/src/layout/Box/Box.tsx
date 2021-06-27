@@ -10,12 +10,12 @@ function InnerBox( props: BoxProps, ref: ForwardedRef<HTMLElement> ): JSX.Elemen
     column = false,
     width = "100%",
     height = "100%",
+    onClick,
     id,
     testId,
     justifyContent,
     alignItems,
     padding,
-    backgroundColor,
     css,
   } = props;
 
@@ -25,13 +25,13 @@ function InnerBox( props: BoxProps, ref: ForwardedRef<HTMLElement> ): JSX.Elemen
       as={ as }
       id={ id }
       data-testid={ testId }
+      onClick={ onClick }
       column={ column }
       justifyContent={ justifyContent }
       alignItems={ alignItems }
       $width={ width }
       $height={ height }
       padding={ padding }
-      backgroundColor={ backgroundColor }
       className={ getClassName( props ) }
       css={ css }
     >

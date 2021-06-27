@@ -1,5 +1,6 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import { AlignItems, JustifyContent } from "@mono/styled";
+import { CSSProp } from "styled-components";
 import { AsProps } from "../../types";
 
 export type BoxAllowedAsValues =
@@ -15,6 +16,7 @@ export type BoxAllowedAsValues =
 
 export interface BoxProps extends TestIdProps, AsProps<BoxAllowedAsValues> {
   readonly children: React.ReactNode;
+  readonly onClick?: MouseEventHandler;
   readonly id?: string;
   readonly column?: boolean;
   readonly justifyContent?: JustifyContent;
@@ -22,8 +24,7 @@ export interface BoxProps extends TestIdProps, AsProps<BoxAllowedAsValues> {
   readonly width?: string;
   readonly height?: string;
   readonly padding?: string;
-  readonly backgroundColor?: string;
-  readonly css?: string;
+  readonly css?: CSSProp;
 }
 
 // redefine transient props to not be consumed by styled-components

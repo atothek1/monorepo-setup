@@ -9,5 +9,4 @@ export const StyledBox = styled.div<StyledBoxProps>`
     ${ props => ( props.$width ? `width: ${ props.$width };` : "" ) }
     ${ props => ( props.$height ? `height: ${ props.$height };` : "" ) }
     ${ props => ( props.padding ? `padding: ${ props.padding };` : "" ) }
-    ${ props => ( props.backgroundColor ? `background-color: ${ props.backgroundColor };` : "" ) }
 `;
