@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@mono/styled": "^1.0.0",
+    "@testing-library/dom": "^8.0.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/react-hooks": "^5.1.2",
