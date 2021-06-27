@@ -15,6 +15,16 @@ module.exports = {
   styleguideComponents: {
     Wrapper: resolve( __dirname, "../packages/libs/styled/src/StyleguideWrapper" ),
   },
+  template: {
+    head: {
+      links: [
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
+        },
+      ],
+    },
+  },
   getComponentPathLine: ( pathname ) => {
     const pathParts = pathname.split( "/" );
     const packageName = pathParts[ 3 ];
