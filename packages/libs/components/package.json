@@ -14,14 +14,14 @@
     "url": "git+https://github.com/atothek1/monorepo-setup.git"
   },
   "scripts": {
-    "prebuild": "npm run clean && npm run quality",
+    "prebuild": "yarn clean && yarn quality",
     "build": "echo \"no build for internal packages\" && exit 0",
     "clean": "rimraf ./coverage ./dist ./temp",
     "type": "tsc --noEmit",
     "lint": "eslint ./ --config .eslintrc",
     "lint:fix": "eslint ./ --config .eslintrc --fix",
-    "test": "cross-env NODE_ENV=production jest --config ./config/jest.config.js --ci --passWithNoTests",
-    "quality": "npm run type && npm run lint && npm run test"
+    "test": "jest --config ./config/jest.config.js --ci --passWithNoTests",
+    "quality": "yarn type && yarn lint && yarn test"
   },
   "peerDependencies": {
     "@mono/styled": "^1.0.0",

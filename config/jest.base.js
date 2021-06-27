@@ -38,9 +38,9 @@ module.exports = packagePath => ( {
     "@mocks/(.*)": "<rootDir>/__mocks__/$1",
   },
   globals: {
-    __ENVIRONMENT__: "production",
-    __IS_DEVELOPMENT__: false,
-    __IS_PRODUCTION__: true,
+    __ENVIRONMENT__: "development",
+    __IS_DEVELOPMENT__: true,
+    __IS_PRODUCTION__: false,
     __NAME__: "test-app",
     __VERSION__: "1.0.0-test",
   },

@@ -2,6 +2,9 @@
 
 exports[`Box snapshots should render as <main> tag 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   height: 100%;
@@ -17,6 +20,9 @@ exports[`Box snapshots should render as <main> tag 1`] = `
 
 exports[`Box snapshots should render as column 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -35,6 +41,9 @@ exports[`Box snapshots should render as column 1`] = `
 
 exports[`Box snapshots should render default 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   height: 100%;
