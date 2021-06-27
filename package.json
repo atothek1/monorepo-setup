@@ -17,25 +17,25 @@
   ],
   "scripts": {
     "clean": "rimraf ./node_modules && lerna clean",
-    "prebootstrap": "npm run clean",
+    "prebootstrap": "yarn clean",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream",
     "prefull": "lerna run type --concurrency 1 --stream --exclude-dependents && lerna run lint --concurrency 1 --stream --exclude-dependents && lerna run test --concurrency 1 --stream --exclude-dependents",
     "full": "lerna run build --concurrency 1 --stream --exclude-dependents",
     "type": "lerna run type --concurrency 1 --stream --since HEAD --exclude-dependents",
-    "lint": "eslint ./ --ignore-pattern '/packages/*' --config .eslintrc && npm run lint:pkgs",
-    "lint:fix": "eslint ./ --ignore-pattern '/packages/*' --config .eslintrc --fix && npm run lint:pkgs-fix",
+    "lint": "eslint ./ --ignore-pattern '/packages/*' --config .eslintrc && yarn lint:pkgs",
+    "lint:fix": "eslint ./ --ignore-pattern '/packages/*' --config .eslintrc --fix && yarn lint:pkgs-fix",
     "lint:pkgs": "lerna run lint --concurrency 1 --stream --since HEAD --exclude-dependents",
     "lint:pkgs-fix": "lerna run lint:fix --concurrency 1 --stream --since HEAD --exclude-dependents",
     "test": "lerna run test --concurrency 1 --stream --since HEAD --exclude-dependents",
-    "ci": "npm run type && npm run lint:fix && npm run test",
+    "ci": "yarn type && yarn lint:fix && yarn test",
     "build:example-app": "lerna run build --scope @mono/example --stream",
     "start:example-app": "lerna run start --scope @mono/example --stream",
     "styleguide": "styleguidist server --config ./config/styleguide.config.js"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run ci",
+      "pre-commit": "yarn ci",
       "commit-msg": "commitlint --config ./config/commitlint.config.js --env HUSKY_GIT_PARAMS"
     }
   },

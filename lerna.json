@@ -1,8 +1,5 @@
 {
   "command": {
-    "bootstrap": {
-      "hoist": "**"
-    },
     "clean": {
       "yes": true
     },
@@ -11,6 +8,8 @@
       "registry": "http://localhost:4873"
     }
   },
+  "npmClient": "yarn",
+  "useWorkspaces": true,
   "packages": [
     "packages/apps/*",
     "packages/libs/*",

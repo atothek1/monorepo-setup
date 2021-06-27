@@ -23,15 +23,15 @@
     }
   },
   "scripts": {
-    "prebuild": "npm run clean && npm run quality",
+    "prebuild": "yarn clean && yarn quality",
     "build": "cross-env NODE_ENV=production webpack-cli --color --config ./config/webpack.js",
     "clean": "rimraf ./coverage ./dist ./temp",
     "start": "cross-env NODE_ENV=development webpack serve --config ./config/webpack.js",
     "type": "tsc --noEmit",
     "lint": "eslint ./ --config .eslintrc",
     "lint:fix": "eslint ./ --config .eslintrc --fix",
-    "test": "cross-env NODE_ENV=production jest --config ./config/jest.config.js --ci --passWithNoTests",
-    "quality": "npm run type && npm run lint && npm run test"
+    "test": "jest --config ./config/jest.config.js --ci --passWithNoTests",
+    "quality": "yarn type && yarn lint && yarn test"
   },
   "dependencies": {
     "@mono/components": "^1.0.0",
