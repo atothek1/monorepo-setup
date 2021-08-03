@@ -1,5 +1,9 @@
-import logo from "./media/images/xzited-logo.png";
+import Logo from "./media/images/xzited-logo.png";
 
-export {
-    logo as LogoImg
+export const images: Images = {
+    Logo
 };
+
+interface Images {
+    readonly Logo: string;
+}

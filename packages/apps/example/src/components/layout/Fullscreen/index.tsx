@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Text } from "@mono/components";
-import { LogoImg } from "@res";
+import { images } from "@res";
 
 interface FullscreenProps {
     readonly children: React.ReactNode;
@@ -12,7 +12,7 @@ export function Fullscreen( props:FullscreenProps ): JSX.Element {
     return (
         <Box column>
             <Box as="header">
-                <img src={ LogoImg as string } alt="company logo" />
+                <img src={ images.Logo } alt="company logo" />
                 <Text>xZited</Text>
             </Box>
             <Box>
