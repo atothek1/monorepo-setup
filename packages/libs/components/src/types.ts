@@ -1,3 +1,3 @@
 export interface AsProps<TValues> {
-  readonly as?: TValues;
+    readonly as?: TValues;
 }

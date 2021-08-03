@@ -1,3 +1,3 @@
 export interface ModuleApi {
-  readonly basePath: string;
+    readonly basePath: string;
 }

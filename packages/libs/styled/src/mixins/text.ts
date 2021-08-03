@@ -1,12 +1,12 @@
 import {
-  css,
-  DefaultTheme,
-  FlattenInterpolation,
-  ThemedStyledProps,
+    css,
+    DefaultTheme,
+    FlattenInterpolation,
+    ThemedStyledProps,
 } from "styled-components";
 
 function textBase( color?: string, bold = false ): FlattenInterpolation<ThemedStyledProps<unknown, DefaultTheme>> {
-  return css`
+    return css`
     font-family: ${ ( { theme } ) => theme.typo.fontFamily };
     font-weight: ${ ( { theme } ) => ( bold ? theme.typo.fontWeightBold : theme.typo.fontWeight ) };
     font-size: ${ ( { theme } ) => theme.typo.fontSize };
@@ -19,13 +19,13 @@ function textBase( color?: string, bold = false ): FlattenInterpolation<ThemedSt
 }
 
 export function textNormal( color?: string ): FlattenInterpolation<ThemedStyledProps<unknown, DefaultTheme>> {
-  return css`
+    return css`
     ${ textBase( color, false ) };
     `;
 }
 
 export function textNormalBold( color?: string ): FlattenInterpolation<ThemedStyledProps<unknown, DefaultTheme>> {
-  return css`
+    return css`
     ${ textBase( color, true ) };
     `;
 }

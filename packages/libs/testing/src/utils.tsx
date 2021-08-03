@@ -8,24 +8,25 @@ import { theme } from "@mono/styled";
 export * from "@testing-library/react";
 
 export {
-  act as invoke,
-  renderHook,
-  RenderHookOptions,
-  RenderHookResult,
+    act as invoke,
+    renderHook,
+    RenderHookOptions,
+    RenderHookResult,
 } from "@testing-library/react-hooks";
 
 function AllProviders( { children }: { readonly children: React.ReactNode } ): JSX.Element {
-  return (
-    <ThemeProvider theme={ theme }>
-      {children}
-    </ThemeProvider>
-  );
+    return (
+        <ThemeProvider theme={ theme }>
+            {children}
+        </ThemeProvider>
+    );
 }
 
 const customRender = (
-  ui: ReactElement,
-  options?: Omit<RenderOptions, "queries">,
-): RenderResult => render( ui, { wrapper: AllProviders as ComponentType, ...options } );
+    ui: ReactElement,
+    options?: Omit<RenderOptions, "queries">,
+): RenderResult => render( ui, { wrapper: AllProviders as ComponentType,
+    ...options } );
 
 export { customRender as render };
 export { default as userEvent } from "@testing-library/user-event";
