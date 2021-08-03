@@ -1,5 +1,5 @@
 const { merge } = require( "webpack-merge" );
-const { join, resolve } = require( "path" );
+const { resolve } = require( "path" );
 const { HotModuleReplacementPlugin } = require( "webpack" );
 
 module.exports = ( rootPath, packagePath ) => {
@@ -11,7 +11,7 @@ module.exports = ( rootPath, packagePath ) => {
             port: 3000,
             hot: true,
             watchContentBase: true,
-            contentBase: join( __dirname, "dist" ),
+            contentBase: resolve( packagePath, "dist" ),
             historyApiFallback: true,
         },
         plugins: [

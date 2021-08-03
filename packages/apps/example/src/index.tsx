@@ -5,11 +5,11 @@ import { App } from "@components/app";
 import { routes } from "@res/routes";
 
 render(
-  <App
-    name={ __NAME__ }
-    version={ __VERSION__ }
-    environment={ __ENVIRONMENT__ }
-    routes={ routes }
-  />,
-  getRootElement(),
+    <App
+        name={ __NAME__ }
+        version={ __VERSION__ }
+        environment={ __ENVIRONMENT__ }
+        routes={ routes }
+    />,
+    getRootElement(),
 );

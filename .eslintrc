@@ -16,14 +16,19 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:jest/recommended",
     "plugin:import/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
   "plugins": [
     "react",
     "react-hooks",
+    "jest",
     "@typescript-eslint/eslint-plugin"
   ],
   "env": {
@@ -84,8 +89,9 @@
 
     // imports plugin
     // "import/extensions": "off",
+    "import/prefer-default-export": "off",
     "import/no-default-export": "error",
-    "import/no-cycle": [ "error", { "maxDepth": 1 } ],
+    // "import/no-cycle": [ "error", { "maxDepth": 5 } ],
 
     // typescript plugin
     // "@typescript-eslint/no-unsafe-assignment": "off",
@@ -94,7 +100,12 @@
     // "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/indent": [ "error", 4 ],
     "@typescript-eslint/quotes": [ "error", "double" ],
-    "@typescript-eslint/restrict-template-expressions": [ "error", { "allowNullish": true, "allowAny": true } ]
+    "@typescript-eslint/restrict-template-expressions": [ "error", { "allowNullish": true, "allowAny": true } ],
+    "@typescript-eslint/explicit-function-return-type": [ "error", {
+      "allowExpressions": true,
+      "allowTypedFunctionExpressions": true,
+      "allowHigherOrderFunctions": true
+    } ]
   },
   "overrides": [
     {
@@ -120,21 +131,23 @@
     "react": {
       "version": "detect"
     },
-    // Apply special parsing for TypeScript files
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts"]
-    },
     "import/resolver": {
-      "typescript": {
-        "project": "tsconfig.eslint.json"
-      },
-      "react": {},
-      "node": {
-        "extensions": [".mjs", ".js", ".json", ".ts", ".d.ts"]
+      "eslint-import-resolver-custom-alias": {
+        "alias": {
+          "@components": "./src/components",
+          "@containers": "./src/containers",
+          "@hooks": "./src/hooks",
+          "@pages": "./src/pages",
+          "@services": "./src/services",
+          "@store": "./src/store",
+          "@typings": "./src/typings",
+          "@utils": "./src/utils",
+          "@res": "./res",
+          "@mocks": "./__mocks__",
+          "@tests": "./__tests__"
+        },
+        "extensions": [ ".ts", ".tsx", ".d.ts" ]
       }
-    },
-    "import/extensions": [".js", ".mjs", ".jsx", ".ts", ".tsx", ".d.ts"],
-    // Resolve type definition packages
-    "import/external-module-folders": ["node_modules", "node_modules/@types"]
+    }
   }
 }

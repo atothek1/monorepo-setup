@@ -8,6 +8,8 @@ const { getEnvironment, isDevelopmentBuild, isProductionBuild } = require( "./we
 
 module.exports = ( rootPath, packagePath ) => {
 
+    const minimize = isProductionBuild() && !( process.env.NO_MINIMIZE === "true" );
+
     const outputDir = resolve( packagePath, "dist" );
     const packageInfo = require( resolve( packagePath, "package.json" ) );
     const mainEntryPoint = resolve( packagePath, packageInfo.main );
@@ -26,6 +28,8 @@ module.exports = ( rootPath, packagePath ) => {
             filename: "[name].[contenthash].js",
             path: outputDir,
             publicPath: "/",
+            clean: true,
+            // assetModuleFilename: "images/[contenthash][ext][query]"
         },
         resolve: {
             extensions: [ ".ts", ".tsx", ".js", ".jsx" ],
@@ -34,9 +38,11 @@ module.exports = ( rootPath, packagePath ) => {
             alias: {
                 "@components": `${ packagePath }/src/components`,
                 "@containers": `${ packagePath }/src/containers`,
+                "@hooks": `${ packagePath }/src/hooks`,
                 "@pages": `${ packagePath }/src/pages`,
                 "@services": `${ packagePath }/src/services`,
                 "@store": `${ packagePath }/src/store`,
+                "@typings": `${ packagePath }/src/typings`,
                 "@utils": `${ packagePath }/src/utils`,
                 "@res": `${ packagePath }/res`,
             },
@@ -57,27 +63,36 @@ module.exports = ( rootPath, packagePath ) => {
                         },
                     },
                 },
+                {
+                    test: /\.(png|jpe?g|gif|svg|ico)$/,
+                    type: "asset/resource",
+                    generator: {
+                        filename: "images/[name].[contenthash][ext][query]"
+                    }
+                }
             ],
         },
         // configure bundle optimization
         optimization: {
             moduleIds: "deterministic",
-            minimize: true,
+            minimize,
             minimizer: [
-                new TerserPlugin( {
+                minimize && new TerserPlugin( {
                     parallel: true,
                     terserOptions: {
                         compress: {
-                            drop_console: isProductionBuild(),
+                            drop_console: true
                         },
                     },
                 } ),
-            ],
+            ].filter( Boolean ),
             // webpack own scrips to be bundled into own single file
-            runtimeChunk: "single",
+            runtimeChunk: {
+                name: entrypoint => `js/runtime.${ entrypoint.name }`,
+            },
             splitChunks: {
-                filename: "[name].[contenthash].js",
-                chunks: "initial",
+                filename: "js/[name].[contenthash].js",
+                chunks: "all",
                 // enables long time caching for vendor dependencies
                 cacheGroups: {
                     // bundle react router packages into own chunk
