@@ -2,33 +2,72 @@
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": "./",
-    "paths": {
+    "paths":{
+      "@components": [
+        "src/components/index.ts"
+      ],
       "@components/*": [
         "src/components/*"
+      ],
+      "@containers": [
+        "src/containers/index.ts"
       ],
       "@containers/*": [
         "src/containers/*"
       ],
+      "@hooks": [
+        "src/hooks/index.ts"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@pages": [
+        "src/pages/index.ts"
+      ],
       "@pages/*": [
         "src/pages/*"
+      ],
+      "@services": [
+        "src/services/index.ts"
       ],
       "@services/*": [
         "src/services/*"
       ],
+      "@store": [
+        "src/store/index.ts"
+      ],
       "@store/*": [
         "src/store/*"
+      ],
+      "@typings": [
+        "src/typings/index.ts"
+      ],
+      "@typings/*": [
+        "src/typings/*"
+      ],
+      "@utils": [
+        "src/utils/index.ts"
       ],
       "@utils/*": [
         "src/utils/*"
       ],
+      "@res": [
+        "res/index.ts"
+      ],
       "@res/*": [
         "res/*"
       ],
+      "@mocks": [
+        "__mocks__/index.ts"
+      ],
       "@mocks/*": [
-        "src/__mocks__/*"
+        "__mocks__/*"
+      ],
+      "@tests": [
+        "__tests__/index.ts"
       ],
       "@tests/*": [
-        "src/__tests__/*"
+        "__tests__/*"
       ]
     }
   },

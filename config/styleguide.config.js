@@ -1,63 +1,62 @@
 const { resolve } = require( "path" );
-const path = require( "path" );
 
 const parserOptions = {};
 
 module.exports = {
-  pagePerSection: true,
-  exampleMode: "expand",
-  // usageMode: "expand",
-  propsParser: require( "react-docgen-typescript" ).withCustomConfig(
-    "./tsconfig.json",
-    parserOptions,
-  ).parse,
-  webpackConfig: require( "./webpack.styleguide" ),
-  styleguideComponents: {
-    Wrapper: resolve( __dirname, "../packages/libs/styled/src/StyleguideWrapper" ),
-  },
-  template: {
-    head: {
-      links: [
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
+    pagePerSection: true,
+    exampleMode: "expand",
+    // usageMode: "expand",
+    propsParser: require( "react-docgen-typescript" ).withCustomConfig(
+        "./tsconfig.json",
+        parserOptions,
+    ).parse,
+    webpackConfig: require( "./webpack.styleguide" ),
+    styleguideComponents: {
+        Wrapper: resolve( __dirname, "../packages/libs/styled/src/StyleguideWrapper" ),
+    },
+    template: {
+        head: {
+            links: [
+                {
+                    rel: "stylesheet",
+                    href: "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
+                },
+            ],
         },
-      ],
     },
-  },
-  getComponentPathLine: ( pathname ) => {
-    const pathParts = pathname.split( "/" );
-    const packageName = pathParts[ 3 ];
-    const componentName = pathParts[ pathParts.length - 2 ];
-    return `import { ${ componentName } } from "@mono/${ packageName }"`;
-  },
-  compilerConfig: {
-    objectAssign: "Object.assign",
-    transforms: {
-      moduleImport: false,
-      dangerousTaggedTemplateString: true,
+    getComponentPathLine: ( pathname ) => {
+        const pathParts = pathname.split( "/" );
+        const packageName = pathParts[ 3 ];
+        const componentName = pathParts[ pathParts.length - 2 ];
+        return `import { ${ componentName } } from "@mono/${ packageName }"`;
     },
-  },
-  sections: [
-    {
-      name: "Introduction",
-      content: "../packages/libs/components/docs/introduction.md",
+    compilerConfig: {
+        objectAssign: "Object.assign",
+        transforms: {
+            moduleImport: false,
+            dangerousTaggedTemplateString: true,
+        },
     },
-    {
-      name: "Common components",
-      content: "../packages/libs/components/src/common/readme.md",
-      components: "../packages/libs/components/src/common/**/index.tsx",
-    },
-    {
-      name: "Forms components",
-      content: "../packages/libs/components/src/forms/readme.md",
-      components: "../packages/libs/components/src/forms/**/index.tsx",
-    },
-    {
-      name: "Layout components",
-      content: "../packages/libs/components/src/layout/readme.md",
-      components: "../packages/libs/components/src/layout/**/index.tsx",
-    },
+    sections: [
+        {
+            name: "Introduction",
+            content: "../packages/libs/components/docs/introduction.md",
+        },
+        {
+            name: "Common components",
+            content: "../packages/libs/components/src/common/readme.md",
+            components: "../packages/libs/components/src/common/**/index.tsx",
+        },
+        {
+            name: "Forms components",
+            content: "../packages/libs/components/src/forms/readme.md",
+            components: "../packages/libs/components/src/forms/**/index.tsx",
+        },
+        {
+            name: "Layout components",
+            content: "../packages/libs/components/src/layout/readme.md",
+            components: "../packages/libs/components/src/layout/**/index.tsx",
+        },
     /* {
       name: "Introduction",
       content: "docs/introduction.md",
@@ -89,5 +88,5 @@ module.exports = {
       usageMode: "expand", // 'hide' | 'collapse' | 'expand'
     },
     */
-  ],
+    ],
 };

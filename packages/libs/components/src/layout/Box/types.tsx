@@ -15,20 +15,20 @@ export type BoxAllowedAsValues =
   | "form";
 
 export interface BoxProps extends TestIdProps, AsProps<BoxAllowedAsValues> {
-  readonly children: React.ReactNode;
-  readonly onClick?: MouseEventHandler;
-  readonly id?: string;
-  readonly column?: boolean;
-  readonly justifyContent?: JustifyContent;
-  readonly alignItems?: AlignItems;
-  readonly width?: string;
-  readonly height?: string;
-  readonly padding?: string;
-  readonly css?: CSSProp;
+    readonly children: React.ReactNode;
+    readonly onClick?: MouseEventHandler;
+    readonly id?: string;
+    readonly column?: boolean;
+    readonly justifyContent?: JustifyContent;
+    readonly alignItems?: AlignItems;
+    readonly width?: string;
+    readonly height?: string;
+    readonly padding?: string;
+    readonly css?: CSSProp;
 }
 
 // redefine transient props to not be consumed by styled-components
 export interface StyledBoxProps extends Omit<BoxProps, "width" | "height"> {
-  readonly $width?: string;
-  readonly $height?: string;
+    readonly $width?: string;
+    readonly $height?: string;
 }

@@ -9,9 +9,11 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "extraFileExtensions":[ ".spec.ts", ".spec.tsx", ".d.ts" ]
+    "extraFileExtensions":[ ".mock.js", ".spec.ts", ".spec.tsx", ".d.ts" ]
   },
   "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jest/recommended",
@@ -19,8 +21,6 @@
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
-
-    "airbnb-typescript",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking"
@@ -51,10 +51,11 @@
   ],
   "rules": {
     // general code style settings
-    "indent": [ "error", 2, { "SwitchCase": 1 } ],
+    "indent": [ "error", 4, { "SwitchCase": 1 } ],
     "quotes": [ "error", "double" ],
     "max-len": [ "error", 300 ],
     "padded-blocks": "off",
+    "eol-last": [ "error", "always" ],
 
     // space settings
     "space-in-parens": [ "error", "always" ],
@@ -71,12 +72,13 @@
 
     // best practices
     "arrow-parens": [ "error", "as-needed", { "requireForBlockBody": true } ],
+    "semi": [ "error", "always" ],
 
     // react plugin
     "react/prop-types": "off",
     "react/jsx-one-expression-per-line": ["error", { "allow": "single-child" }],
-    "react/jsx-indent": [ "error", 2 ],
-    "react/jsx-indent-props": [ "error", 2 ],
+    "react/jsx-indent": [ "error", 4 ],
+    "react/jsx-indent-props": [ "error", 4 ],
     "react/jsx-curly-spacing": [ "error", "always" ],
     "react-hooks/exhaustive-deps": "error",
     "react/require-default-props": [ "error", {
@@ -88,14 +90,15 @@
     // imports plugin
     // "import/extensions": "off",
     "import/prefer-default-export": "off",
-    "import/no-cycle": [ "error", { "maxDepth": 1 } ],
+    "import/no-default-export": "error",
+    // "import/no-cycle": [ "error", { "maxDepth": 5 } ],
 
     // typescript plugin
     // "@typescript-eslint/no-unsafe-assignment": "off",
     // "@typescript-eslint/no-unsafe-call": "off",
     // "@typescript-eslint/no-empty-interface": "off",
     // "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/indent": [ "error", 2 ],
+    "@typescript-eslint/indent": [ "error", 4 ],
     "@typescript-eslint/quotes": [ "error", "double" ],
     "@typescript-eslint/restrict-template-expressions": [ "error", { "allowNullish": true, "allowAny": true } ],
     "@typescript-eslint/explicit-function-return-type": [ "error", {
@@ -111,7 +114,6 @@
         "import/no-extraneous-dependencies": "off",
         "import/no-dynamic-require": "off",
         "global-require": "off",
-
         "@typescript-eslint/no-unused-vars": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-unsafe-member-access": "off",
@@ -129,11 +131,23 @@
     "react": {
       "version": "detect"
     },
-    "import/extensions": [
-      ".ts",
-      ".tsx",
-      ".js",
-      ".jsx"
-    ]
+    "import/resolver": {
+      "eslint-import-resolver-custom-alias": {
+        "alias": {
+          "@components": "./src/components",
+          "@containers": "./src/containers",
+          "@hooks": "./src/hooks",
+          "@pages": "./src/pages",
+          "@services": "./src/services",
+          "@store": "./src/store",
+          "@typings": "./src/typings",
+          "@utils": "./src/utils",
+          "@res": "./res",
+          "@mocks": "./__mocks__",
+          "@tests": "./__tests__"
+        },
+        "extensions": [ ".ts", ".tsx", ".d.ts" ]
+      }
+    }
   }
 }

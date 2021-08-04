@@ -17,11 +17,11 @@ export type TextAllowedAsValues =
   | "blockquote";
 
 export interface TextProps extends TestIdProps {
-  readonly children: React.ReactNode;
-  readonly as?: TextAllowedAsValues;
-  readonly bold?: boolean;
-  readonly color?: string;
-  readonly css?: string;
+    readonly children: React.ReactNode;
+    readonly as?: TextAllowedAsValues;
+    readonly bold?: boolean;
+    readonly color?: string;
+    readonly css?: string;
 }
 
 export type StyledTextProps = TextProps;
