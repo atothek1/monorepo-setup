@@ -7,11 +7,6 @@ export type JustifyContent =
 
 export type AlignItems = "flex-start" | "flex-end" | "center" | "baseline" | "stretch";
 
-export enum FlexDirection {
-    ROW = "row",
-    COL = "column",
-}
-
 export interface Colors {
     readonly colorTextLight: string;
     readonly colorTextDark: string;

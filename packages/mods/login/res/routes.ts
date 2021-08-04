@@ -1,6 +1,6 @@
 import { Route } from "@mono/navigation";
 import { RouteIds } from "./ids";
-import { Login } from "../src/pages/Login";
+import { Login } from "../src";
 
 export function getRoutes( basePath: string ): ReadonlyArray<Route<RouteIds>> {
     return [
