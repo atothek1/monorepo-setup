@@ -1,5 +1,5 @@
 {
-  "name": "@mono/testing",
+  "name": "@mono/service-engine",
   "version": "1.0.0",
   "description": "> TODO: description",
   "author": "Alexander Kämmerer <atothek1@gmail.com>",
@@ -23,32 +23,10 @@
     "test": "jest --config ./config/jest.config.js --ci --passWithNoTests",
     "quality": "yarn type && yarn lint && yarn test"
   },
-  "dependencies": {
-    "@mono/styled": "^1.0.0",
-    "@testing-library/dom": "^8.0.0",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/react-hooks": "^5.1.2",
-    "@testing-library/user-event": "^13.1.9",
-    "jest-styled-components": "^7.0.4",
-    "msw": "^0.35.0",
-    "styled-components": "^5.3.0",
-    "whatwg-fetch": "^3.6.2"
-  },
   "peerDependencies": {
-    "core-js": "^3.15.0",
-    "formik": "^2.2.9",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
-    "yup": "^0.32.9"
   },
   "devDependencies": {
-    "@types/react": "^17.0.11",
-    "@types/react-dom": "^17.0.7",
-    "@types/react-router": "^5.1.15",
-    "@types/react-router-dom": "^5.1.7"
+      "@mono/testing": "^1.0.0"
   },
   "bugs": {
     "url": "https://github.com/atothek1/monorepo-setup/issues"
