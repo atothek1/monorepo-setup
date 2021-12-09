@@ -1,5 +1,5 @@
 {
-  "name": "@mono/service-engine",
+  "name": "@mono/code-generator",
   "version": "1.0.0",
   "description": "> TODO: description",
   "author": "Alexander Kämmerer <atothek1@gmail.com>",
@@ -24,11 +24,8 @@
     "quality": "yarn type && yarn lint && yarn test"
   },
   "peerDependencies": {
-      "@mono/utils": "^1.0.0"
   },
   "devDependencies": {
-      "@mono/testing": "^1.0.0",
-      "@mono/utils": "^1.0.0"
   },
   "bugs": {
     "url": "https://github.com/atothek1/monorepo-setup/issues"

@@ -73,6 +73,39 @@ describe( "service-engine/createService()", () => {
             return response;
         } );
         expect( final ).toBeDefined();
+        expect( final.isError ).toBeTruthy();
+        expect( final.error?.name ).toBe( "AbortError" );
+        expect( final.error?.message ).toBe( "Aborted" );
+    } );
+
+    it( "should execute request and return error due to passed in resolver throwing error", async () => {
+        const resolver = ( _response: Response ) => { throw new Error( "Test Error" ); };
+        const testService = createService( mockedRequest,{
+            name: mockedServiceName,
+            resolver
+        } );
+        expect( testService ).toBeDefined();
+
+        const result = await testService.execute();
+        expect( result ).toBeDefined();
+        expect( result.isError ).toBeTruthy();
+        expect( result.error?.name ).toBe( "Error" );
+        expect( result.error?.message ).toBe( "Test Error" );
+    } );
+
+    it( "should execute request and return error due to passed in resolver return rejected promise", async () => {
+        const resolver = ( _response: Response ) => { return Promise.reject( "Test Reject" ); };
+        const testService = createService( mockedRequest,{
+            name: mockedServiceName,
+            resolver
+        } );
+        expect( testService ).toBeDefined();
+
+        const result = await testService.execute();
+        expect( result ).toBeDefined();
+        expect( result.isError ).toBeTruthy();
+        expect( result.error?.name ).toBe( "Error" );
+        expect( result.error?.message ).toBe( "Test Reject" );
     } );
 
     it( "should execute multiple times same request, abort and return error response", async () => {

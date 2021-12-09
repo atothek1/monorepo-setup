@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "./__mocks__/**/*",
+    "./config/**/*",
+    "./res/**/*",
+    "./src/**/*",
+    "./global.d.ts"
+  ]
+}

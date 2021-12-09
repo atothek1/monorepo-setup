@@ -3,7 +3,7 @@ import { Route } from "@mono/navigation";
 import { RouteIds } from "@res";
 import { Home } from "@pages";
 
-const Login = React.lazy( () => import( /* webpackChunkName: "js/login-module" */ "@pages/Login" ) );
+const Login = React.lazy( async () => import( /* webpackChunkName: "js/login-module" */ "@pages/Login" ).then( ( { Login } ) => ( { default: Login } ) ) );
 
 export const routes: ReadonlyArray<Route<RouteIds>> = [
     {

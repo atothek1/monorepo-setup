@@ -24,7 +24,7 @@ export interface ServiceResponse<TResponse> {
     readonly data: TResponse | null;
     readonly error: Error | null;
     readonly request: RequestInit;
-    readonly response: Response | Error;
+    readonly response: Response | Error | null;
     readonly serviceName: string;
 }
 

@@ -53,5 +53,8 @@
     "@types/react-router": "^5.1.15",
     "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.10"
+  },
+  "msw": {
+    "workerDirectory": "dist"
   }
 }

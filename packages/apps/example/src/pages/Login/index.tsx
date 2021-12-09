@@ -6,7 +6,7 @@ import { Module as LoginModule } from "@mono/login";
 // it must be an default export to work properly
 // with React.lazy(...)
 // eslint-disable-next-line import/no-default-export
-export default function Login(): JSX.Element {
+export function Login(): JSX.Element {
     const api = {
         basePath: "/login",
     };

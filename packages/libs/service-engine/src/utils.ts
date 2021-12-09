@@ -1,14 +1,17 @@
-import { ABORT_ERROR_MESSAGE } from "./constants";
 import { PipeResolverFunction, ResolverFunction, ServiceParameters, ValidParameterValue } from "./types";
 
 export function getDefaultResolver<TResponse>(): ResolverFunction<TResponse> {
     return ( response: Response ): Promise<TResponse> => response.json() as Promise<TResponse>;
 }
 
-export function getAbortError(): Error {
+export function getError( obj: any ): Error {
+    if( obj instanceof Error ) {
+        return obj;
+    }
+
     return {
-        name: "AbortError",
-        message: ABORT_ERROR_MESSAGE
+        name: "ServiceError",
+        message: `${ obj }`
     };
 }
 
@@ -26,6 +29,7 @@ function sanitizeQueryParameters( queryParams: Record<string, ValidParameterValu
     }, {} as Record<string, string> ) ;
 }
 
+// TODO: support query params with array values and delimter join strategies
 export function getUrl( baseUrl: string, parameters: ServiceParameters<any> = {} ): string {
     const { path: pathParams = {}, query: queryParams = {} } = parameters;
     const sanitizedQueryParams = sanitizeQueryParameters( queryParams );

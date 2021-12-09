@@ -50,7 +50,7 @@
     "**/temp/*"
   ],
   "rules": {
-    "complexity": ["error", 6],
+    "complexity": ["error", 10],
     // general code style settings
     "indent": [ "error", 4, { "SwitchCase": 1 } ],
     "quotes": [ "error", "double" ],

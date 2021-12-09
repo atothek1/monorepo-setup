@@ -1,6 +1,6 @@
 import { GET_WITH_BODY_ERROR_MESSAGE } from "./constants";
 import { ResolverFunction, ServiceFactory, ServiceOptions, ServiceRequest, ServiceResponse } from "./types";
-import { getAbortError, getDefaultResolver, getUrl } from "./utils";
+import { getDefaultResolver, getError, getUrl } from "./utils";
 
 export function createService<TResponse, TRequestBody = null>(
     initRequest: ServiceRequest<TRequestBody>,
@@ -44,31 +44,24 @@ export function createService<TResponse, TRequestBody = null>(
 
             return fetch( request.url, request )
                 .then( async ( response ) => {
-                    if ( controller.signal.aborted ) {
-                        const error = getAbortError();
-                        return Promise.reject( {
-                            isError: true,
-                            data: null,
-                            error,
+                    // TODO: check for HttpStatus that we might want to end as an error
+                    try{
+                        const data = await resolve( response );
+                        return {
+                            isError: false,
+                            data,
+                            error: null,
                             url,
                             request,
                             response,
                             serviceName
-                        } );
+                        };
+                    } catch( error ){
+                        return Promise.reject( error );
                     }
-
-                    const data = await resolve( response );
-                    return {
-                        isError: false,
-                        data,
-                        error: null,
-                        url,
-                        request,
-                        response,
-                        serviceName
-                    };
                 } )
-                .catch( ( error: Error ) => {
+                .catch( ( reason: any ) => {
+                    const error = getError( reason );
                     return {
                         isError: true,
                         data: null,
@@ -76,7 +69,7 @@ export function createService<TResponse, TRequestBody = null>(
                         url,
                         request,
                         response: error,
-                        serviceName: serviceName + " from catch"
+                        serviceName: serviceName
                     };
                 } );
         },

@@ -33,19 +33,20 @@ export function useService<TResponse, TRequestBody>( request: ServiceRequest<TRe
                 },
                 dispose() {
                     service.abort();
+                    memoizedRequestReference.current = null;
                 }
             };
         }
         return memoizedRequestReference.current;
-    }, [ memoizedRequestReference.current, service, resolver ] );
+    }, [ service, resolver ] );
 
-    const proxy = useMemo( () => createMemoizedRequestProxy(), [ createMemoizedRequestProxy ] );
+    const proxy = createMemoizedRequestProxy();
 
     useEffect( () => {
         if( options.isLazy ) {
             proxy.execute( request );
         }
-        return () => proxy.dispose();
+        return proxy.dispose;
     }, [ proxy, request, options.isLazy ] );
     return state;
 }
